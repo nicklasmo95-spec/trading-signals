@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T13:45:00+01:00",
+  "candidates": [
+    {
+      "ticker": "PANW",
+      "score": 2,
+      "note": "Del af AI- og software-udsalget efter midtvejsvalget; cyber-aktierne faldt ca. 17 % på en uge. Regnskab ventes inden for få uger."
+    },
+    {
+      "ticker": "MPC",
+      "score": 2,
+      "note": "Faldt 10 % dagen efter Demokraternes Senat-sejr på frygt for strammere brændstofregler, trods et rekordstærkt Q3. Politisk risiko, ikke støj."
+    },
+    {
+      "ticker": "LMT",
+      "score": 3,
+      "note": "Forsvarsaktier faldt på frygt for et mindre Pentagon-budget efter valget. Rekordstor ordrebog; analytikere kalder faldet en købsmulighed. Budgettet afgøres først i 2027."
+    },
+    {
+      "ticker": "NUE",
+      "score": 3,
+      "note": "Ingen selskabsspecifik nyhed fundet. Faldet ser ud til at følge det brede marked."
+    },
+    {
+      "ticker": "PSX",
+      "score": 2,
+      "note": "Faldt 6-7 % sammen med de andre raffinaderier på politisk risiko efter valget. Raffinering er ca. 4/5 af indtjeningen."
+    },
+    {
+      "ticker": "CRWD",
+      "score": 2,
+      "note": "Faldt 9 % den 5. nov. i AI-software-udsalget, men er stadig op ca. 86 % i år. Kan falde mere, hvis udsalget fortsætter."
+    },
+    {
+      "ticker": "IFF",
+      "score": 3,
+      "note": "Ingen selskabsspecifik nyhed fundet."
+    },
+    {
+      "ticker": "CVX",
+      "score": 3,
+      "note": "Olie faldt på ugen (WTI ca. 90 USD). Ingen selskabsspecifik nyhed fundet."
+    },
+    {
+      "ticker": "OXY",
+      "score": 1,
+      "note": "Aflægger regnskab i dag efter lukketid; optionerne prissætter ±5,4 %. Køb ikke ind i et regnskab på et RSI-2-signal."
+    },
+    {
+      "ticker": "TRGP",
+      "score": 3,
+      "note": "Ingen selskabsspecifik nyhed fundet. Kun 1,8 % over SMA200, så trenden er tæt på at knække."
+    },
+    {
+      "ticker": "GD",
+      "score": 3,
+      "note": "Samme forsvars-tema som LMT. Kun 0,6 % over SMA200."
+    },
+    {
+      "ticker": "EXPD",
+      "score": 3,
+      "note": "Ingen selskabsspecifik nyhed fundet."
+    },
+    {
+      "ticker": "NTAP",
+      "score": 3,
+      "note": "Ingen nyhed fundet, men aktien var op 2,1 % i præ-marked i morges, så reboundet kan være i gang."
+    },
+    {
+      "ticker": "VLO",
+      "score": 2,
+      "note": "Faldt 8 % efter valget sammen med MPC og PSX på frygt for strammere brændstofregler."
+    },
+    {
+      "ticker": "NSC",
+      "score": 2,
+      "note": "Er ved at blive opkøbt af Union Pacific. Kursen følger handlen, ikke markedet, så RSI-2-signalet siger lidt. Risiko er at handlen falder."
+    },
+    {
+      "ticker": "OKTA",
+      "score": 2,
+      "note": "Faldt 10 % den 5. nov. i AI-software-udsalget, efter at være steget ca. 98 % i år."
+    },
+    {
+      "ticker": "NDSN",
+      "score": 3,
+      "note": "Ingen selskabsspecifik nyhed fundet."
+    },
+    {
+      "ticker": "IT",
+      "score": 2,
+      "note": "Gartner har været i strukturelt fald hele året efter svag 2026-guidance og frygt for AI-konkurrence. Ligner mere en faldende kniv end støj."
+    },
+    {
+      "ticker": "TXN",
+      "score": 3,
+      "note": "Ramt af chip-udsalget torsdag. Chip-aktierne hentede en del tilbage fredag, så reboundet er i gang."
+    },
+    {
+      "ticker": "AIG",
+      "score": 4,
+      "note": "Slog forventningerne den 3. nov. (EPS 2,06 mod ventet 1,90, omsætning 7,51 mia. USD) men faldt alligevel med markedet. Faldet ser ud som støj."
+    }
+  ]
+}
