@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T21:05:11+00:00",
+  "trades": [
+    {
+      "time": "2026-11-09T14:30:53.164547",
+      "type": "SELL",
+      "ticker": "TWLO",
+      "price": 202.04,
+      "amount": 230.0
+    },
+    {
+      "time": "2026-11-09T14:31:03.914503",
+      "type": "SELL",
+      "ticker": "ZBRA",
+      "price": 321.99,
+      "amount": 128.0
+    },
+    {
+      "time": "2026-11-09T14:31:11.165569",
+      "type": "SELL",
+      "ticker": "EOG",
+      "price": 147.24,
+      "amount": 271.0
+    },
+    {
+      "time": "2026-11-09T14:31:17.664822",
+      "type": "SELL",
+      "ticker": "OXY",
+      "price": 56.42,
+      "amount": 698.0
+    },
+    {
+      "time": "2026-11-09T14:31:24.164537",
+      "type": "SELL",
+      "ticker": "APA",
+      "price": 44.62,
+      "amount": 889.0
+    },
+    {
+      "time": "2026-11-09T14:31:31.414549",
+      "type": "SELL",
+      "ticker": "PANW",
+      "price": 313.79,
+      "amount": 115.0
+    },
+    {
+      "time": "2026-11-09T14:31:40.414914",
+      "type": "BUY",
+      "ticker": "MPC",
+      "price": 372.74,
+      "amount": 122.0
+    },
+    {
+      "time": "2026-11-09T14:31:47.915374",
+      "type": "BUY",
+      "ticker": "LMT",
+      "price": 567.12,
+      "amount": 80.0
+    },
+    {
+      "time": "2026-11-09T14:31:56.914746",
+      "type": "BUY",
+      "ticker": "PSX",
+      "price": 245.72,
+      "amount": 185.0
+    },
+    {
+      "time": "2026-11-09T14:32:06.164628",
+      "type": "BUY",
+      "ticker": "CVX",
+      "price": 212.69,
+      "amount": 213.0
+    },
+    {
+      "time": "2026-11-09T14:32:13.664954",
+      "type": "BUY",
+      "ticker": "TRGP",
+      "price": 264.61,
+      "amount": 171.0
+    },
+    {
+      "time": "2026-11-09T14:32:30.666135",
+      "type": "BUY",
+      "ticker": "VLO",
+      "price": 346.45,
+      "amount": 131.0
+    },
+    {
+      "time": "2026-11-09T14:32:49.416661",
+      "type": "BUY",
+      "ticker": "IT",
+      "price": 190.04,
+      "amount": 239.0
+    },
+    {
+      "time": "2026-11-09T14:34:23.164999",
+      "type": "SELL",
+      "ticker": "TWLO",
+      "price": 202.04,
+      "amount": 230.0
+    },
+    {
+      "time": "2026-11-09T14:34:58.915428",
+      "type": "BUY",
+      "ticker": "OXY",
+      "price": 56.42,
+      "amount": 806.0
+    },
+    {
+      "time": "2026-11-09T14:35:09.665849",
+      "type": "BUY",
+      "ticker": "EXPD",
+      "price": 184.61,
+      "amount": 246.0
+    },
+    {
+      "time": "2026-11-09T14:35:17.166326",
+      "type": "BUY",
+      "ticker": "NTAP",
+      "price": 169.19,
+      "amount": 268.0
+    },
+    {
+      "time": "2026-11-09T17:51:57.717670",
+      "type": "SELL",
+      "ticker": "MPC",
+      "price": 392.18,
+      "amount": 122.0
+    }
+  ]
+}
