@@ -1,0 +1,85 @@
+{
+  "updated_at": "2026-11-10T13:34:53+00:00",
+  "ok": true,
+  "broker": "alpaca",
+  "mode": "PAPER",
+  "ai_mode": "shadow",
+  "halted": false,
+  "last_event": "test",
+  "account": {
+    "equity": 99991.23,
+    "cash": 75000.03,
+    "day_pl": 78.01,
+    "day_pl_pct": 0.08
+  },
+  "max_positions": 20,
+  "positions": [
+    {
+      "ticker": "COF",
+      "qty": 24.971233,
+      "entry_price": 200.23,
+      "entry_date": "2026-11-09",
+      "stop": 192.22,
+      "days": 2,
+      "ai_decision": "OFF",
+      "protected": true,
+      "price": 198.66,
+      "upl_pct": -0.78
+    },
+    {
+      "ticker": "CVX",
+      "qty": 23.711244,
+      "entry_price": 210.87,
+      "entry_date": "2026-11-09",
+      "stop": 202.44,
+      "days": 2,
+      "ai_decision": "OFF",
+      "protected": true,
+      "price": 210.86,
+      "upl_pct": -0.0
+    },
+    {
+      "ticker": "PM",
+      "qty": 25.601587,
+      "entry_price": 195.3,
+      "entry_date": "2026-11-09",
+      "stop": 187.49,
+      "days": 2,
+      "ai_decision": "OFF",
+      "protected": true,
+      "price": 193.15,
+      "upl_pct": -1.1
+    },
+    {
+      "ticker": "SYF",
+      "qty": 68.427398,
+      "entry_price": 73.07,
+      "entry_date": "2026-11-09",
+      "stop": 70.15,
+      "days": 2,
+      "ai_decision": "OFF",
+      "protected": true,
+      "price": 73.2,
+      "upl_pct": 0.18
+    },
+    {
+      "ticker": "XOM",
+      "qty": 30.365541,
+      "entry_price": 164.66,
+      "entry_date": "2026-11-09",
+      "stop": 158.07,
+      "days": 2,
+      "ai_decision": "OFF",
+      "protected": true,
+      "price": 164.77,
+      "upl_pct": 0.07
+    }
+  ],
+  "rules": {
+    "rsi_entry": 10.0,
+    "rsi_exit": 90.0,
+    "stop_pct": 4.0,
+    "max_hold_days": 4,
+    "sma_exit": 5
+  }
+}
