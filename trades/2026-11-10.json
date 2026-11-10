@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T21:05:21+00:00",
+  "trades": [
+    {
+      "time": "2026-11-10T14:30:43.103339",
+      "type": "SELL",
+      "ticker": "VLO",
+      "price": 356.88,
+      "amount": 131.0
+    },
+    {
+      "time": "2026-11-10T14:30:46.122549",
+      "type": "SELL",
+      "ticker": "TRGP",
+      "price": 273.65,
+      "amount": 171.0
+    },
+    {
+      "time": "2026-11-10T14:30:50.718551",
+      "type": "SELL",
+      "ticker": "PSX",
+      "price": 253.04,
+      "amount": 185.0
+    },
+    {
+      "time": "2026-11-10T14:30:53.630238",
+      "type": "SELL",
+      "ticker": "LMT",
+      "price": 588.43,
+      "amount": 80.0
+    },
+    {
+      "time": "2026-11-10T14:30:56.423527",
+      "type": "SELL",
+      "ticker": "NTAP",
+      "price": 176.1,
+      "amount": 268.0
+    },
+    {
+      "time": "2026-11-10T14:31:02.155225",
+      "type": "BUY",
+      "ticker": "WDAY",
+      "price": 190.24,
+      "amount": 240.0
+    },
+    {
+      "time": "2026-11-10T14:31:07.512187",
+      "type": "BUY",
+      "ticker": "COP",
+      "price": 134.61,
+      "amount": 340.0
+    },
+    {
+      "time": "2026-11-10T14:31:12.468711",
+      "type": "BUY",
+      "ticker": "FDS",
+      "price": 326.76,
+      "amount": 140.0
+    },
+    {
+      "time": "2026-11-10T14:32:22.102422",
+      "type": "BUY",
+      "ticker": "SYF",
+      "price": 73.21,
+      "amount": 624.0
+    },
+    {
+      "time": "2026-11-10T14:32:25.296797",
+      "type": "BUY",
+      "ticker": "XOM",
+      "price": 164.77,
+      "amount": 277.0
+    },
+    {
+      "time": "2026-11-10T14:32:31.933732",
+      "type": "BUY",
+      "ticker": "HPQ",
+      "price": 28.26,
+      "amount": 1615.0
+    },
+    {
+      "time": "2026-11-10T14:34:42.208339",
+      "type": "SELL",
+      "ticker": "EXPD",
+      "price": 189.61,
+      "amount": 246.0
+    },
+    {
+      "time": "2026-11-10T14:40:22.582066",
+      "type": "BUY",
+      "ticker": "VRSN",
+      "price": 305.87,
+      "amount": 149.0
+    },
+    {
+      "time": "2026-11-10T14:41:32.504493",
+      "type": "BUY",
+      "ticker": "MNST",
+      "price": 45.67,
+      "amount": 999.0
+    },
+    {
+      "time": "2026-11-10T14:46:00.052352",
+      "type": "SELL",
+      "ticker": "SYF",
+      "price": 74.02,
+      "amount": 624.0
+    },
+    {
+      "time": "2026-11-10T14:47:12.121140",
+      "type": "BUY",
+      "ticker": "SYF",
+      "price": 73.92,
+      "amount": 618.0
+    },
+    {
+      "time": "2026-11-10T14:48:19.753425",
+      "type": "SELL",
+      "ticker": "SYF",
+      "price": 73.92,
+      "amount": 618.0
+    },
+    {
+      "time": "2026-11-10T14:49:31.041391",
+      "type": "BUY",
+      "ticker": "SYF",
+      "price": 73.29,
+      "amount": 623.0
+    },
+    {
+      "time": "2026-11-10T15:10:50.847655",
+      "type": "BUY",
+      "ticker": "PAYX",
+      "price": 113.61,
+      "amount": 402.0
+    },
+    {
+      "time": "2026-11-10T15:14:13.772855",
+      "type": "BUY",
+      "ticker": "ACN",
+      "price": 253.85,
+      "amount": 180.0
+    },
+    {
+      "time": "2026-11-10T19:03:02.214288",
+      "type": "SELL",
+      "ticker": "OXY",
+      "price": 56.61,
+      "amount": 718.0
+    },
+    {
+      "time": "2026-11-10T19:03:05.336442",
+      "type": "SELL",
+      "ticker": "COP",
+      "price": 135.85,
+      "amount": 340.0
+    }
+  ]
+}
