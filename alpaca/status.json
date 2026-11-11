@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-11T12:00:54+00:00",
+  "updated_at": "2026-11-11T14:32:55+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "scan",
+  "last_event": "køb",
   "account": {
-    "equity": 99778.81,
-    "cash": 73691.02,
-    "day_pl": -6.67,
-    "day_pl_pct": -0.01
+    "equity": 99767.38,
+    "cash": 68700.26,
+    "day_pl": -18.1,
+    "day_pl_pct": -0.02
   },
   "max_positions": 20,
   "positions": [
@@ -23,8 +23,8 @@
       "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 195.81,
-      "upl_pct": -2.21
+      "price": 195.46,
+      "upl_pct": -2.38
     },
     {
       "ticker": "CVX",
@@ -35,8 +35,8 @@
       "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 211.21,
-      "upl_pct": 0.16
+      "price": 211.43,
+      "upl_pct": 0.27
     },
     {
       "ticker": "PM",
@@ -47,8 +47,8 @@
       "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 194.27,
-      "upl_pct": -0.53
+      "price": 193.17,
+      "upl_pct": -1.09
     },
     {
       "ticker": "SYF",
@@ -59,8 +59,20 @@
       "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 71.66,
-      "upl_pct": -1.93
+      "price": 72.05,
+      "upl_pct": -1.4
+    },
+    {
+      "ticker": "WDAY",
+      "qty": 26.216105,
+      "entry_price": 190.37,
+      "entry_date": "2026-11-11",
+      "stop": 182.76,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 188.88,
+      "upl_pct": -0.79
     },
     {
       "ticker": "XOM",
@@ -71,8 +83,8 @@
       "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 164.42,
-      "upl_pct": -0.15
+      "price": 164.68,
+      "upl_pct": 0.01
     }
   ],
   "rules": {
