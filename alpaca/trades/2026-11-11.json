@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11T20:50:12+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-11T14:32:55",
+      "symbol": "WDAY",
+      "side": "buy",
+      "qty": 26.2161,
+      "price": 190.37,
+      "notional": 4990.76,
+      "reason": "RSI2 5.4",
+      "entry_date": "2026-11-11",
+      "entry_price": 190.37,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "d77d18f6-3546-4206-babc-c2c1ff91358b"
+    }
+  ]
+}
