@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-10T20:50:06+00:00",
+  "updated_at": "2026-11-11T12:00:54+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "exit-tjek",
+  "last_event": "scan",
   "account": {
-    "equity": 99828.32,
-    "cash": 73691.03,
-    "day_pl": -84.9,
-    "day_pl_pct": -0.08
+    "equity": 99778.81,
+    "cash": 73691.02,
+    "day_pl": -6.67,
+    "day_pl_pct": -0.01
   },
   "max_positions": 20,
   "positions": [
@@ -20,11 +20,11 @@
       "entry_price": 200.23,
       "entry_date": "2026-11-09",
       "stop": 192.22,
-      "days": 2,
+      "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 195.88,
-      "upl_pct": -2.17
+      "price": 195.81,
+      "upl_pct": -2.21
     },
     {
       "ticker": "CVX",
@@ -32,11 +32,11 @@
       "entry_price": 210.87,
       "entry_date": "2026-11-09",
       "stop": 202.44,
-      "days": 2,
+      "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 211.64,
-      "upl_pct": 0.37
+      "price": 211.21,
+      "upl_pct": 0.16
     },
     {
       "ticker": "PM",
@@ -44,11 +44,11 @@
       "entry_price": 195.3,
       "entry_date": "2026-11-09",
       "stop": 187.49,
-      "days": 2,
+      "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 194.59,
-      "upl_pct": -0.36
+      "price": 194.27,
+      "upl_pct": -0.53
     },
     {
       "ticker": "SYF",
@@ -56,11 +56,11 @@
       "entry_price": 73.07,
       "entry_date": "2026-11-09",
       "stop": 70.15,
-      "days": 2,
+      "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 71.86,
-      "upl_pct": -1.65
+      "price": 71.66,
+      "upl_pct": -1.93
     },
     {
       "ticker": "XOM",
@@ -68,11 +68,11 @@
       "entry_price": 164.66,
       "entry_date": "2026-11-09",
       "stop": 158.07,
-      "days": 2,
+      "days": 3,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 164.61,
-      "upl_pct": -0.03
+      "price": 164.42,
+      "upl_pct": -0.15
     }
   ],
   "rules": {
