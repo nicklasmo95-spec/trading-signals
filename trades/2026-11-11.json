@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11T21:05:49+00:00",
+  "trades": [
+    {
+      "time": "2026-11-11T14:30:43.088095",
+      "type": "SELL",
+      "ticker": "VRSN",
+      "price": 311.23,
+      "amount": 149.0
+    },
+    {
+      "time": "2026-11-11T14:30:49.359414",
+      "type": "BUY",
+      "ticker": "OTIS",
+      "price": 78.15,
+      "amount": 591.0
+    },
+    {
+      "time": "2026-11-11T14:30:54.267751",
+      "type": "BUY",
+      "ticker": "RMD",
+      "price": 234.15,
+      "amount": 197.0
+    },
+    {
+      "time": "2026-11-11T14:31:59.854001",
+      "type": "SELL",
+      "ticker": "ACN",
+      "price": 258.6,
+      "amount": 180.0
+    },
+    {
+      "time": "2026-11-11T14:42:17.150395",
+      "type": "BUY",
+      "ticker": "YUM",
+      "price": 160.21,
+      "amount": 288.0
+    },
+    {
+      "time": "2026-11-11T14:45:37.188031",
+      "type": "SELL",
+      "ticker": "CVX",
+      "price": 213.23,
+      "amount": 213.0
+    },
+    {
+      "time": "2026-11-11T14:45:40.432623",
+      "type": "SELL",
+      "ticker": "HPQ",
+      "price": 28.78,
+      "amount": 1615.0
+    },
+    {
+      "time": "2026-11-11T14:45:43.152482",
+      "type": "SELL",
+      "ticker": "XOM",
+      "price": 165.5,
+      "amount": 277.0
+    },
+    {
+      "time": "2026-11-11T15:01:21.265917",
+      "type": "SELL",
+      "ticker": "FDS",
+      "price": 332.18,
+      "amount": 125.0
+    },
+    {
+      "time": "2026-11-11T15:04:48.183635",
+      "type": "BUY",
+      "ticker": "EFX",
+      "price": 188.53,
+      "amount": 245.0
+    },
+    {
+      "time": "2026-11-11T15:05:54.071606",
+      "type": "SELL",
+      "ticker": "EFX",
+      "price": 189.38,
+      "amount": 245.0
+    },
+    {
+      "time": "2026-11-11T15:07:07.937235",
+      "type": "BUY",
+      "ticker": "EFX",
+      "price": 188.74,
+      "amount": 244.0
+    },
+    {
+      "time": "2026-11-11T19:58:54.886882",
+      "type": "SELL",
+      "ticker": "RMD",
+      "price": 236.21,
+      "amount": 197.0
+    },
+    {
+      "time": "2026-11-11T20:37:41.492969",
+      "type": "SELL",
+      "ticker": "IT",
+      "price": 192.43,
+      "amount": 239.0
+    }
+  ]
+}
