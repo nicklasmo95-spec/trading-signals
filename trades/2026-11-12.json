@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T21:05:14+00:00",
+  "trades": [
+    {
+      "time": "2026-11-12T14:32:08.203016",
+      "type": "SELL",
+      "ticker": "WDAY",
+      "price": 191.17,
+      "amount": 240.0
+    },
+    {
+      "time": "2026-11-12T14:37:16.869300",
+      "type": "BUY",
+      "ticker": "ADSK",
+      "price": 260.03,
+      "amount": 178.0
+    },
+    {
+      "time": "2026-11-12T14:46:09.718185",
+      "type": "SELL",
+      "ticker": "MNST",
+      "price": 45.77,
+      "amount": 999.0
+    },
+    {
+      "time": "2026-11-12T14:46:13.034574",
+      "type": "SELL",
+      "ticker": "PAYX",
+      "price": 118.0,
+      "amount": 402.0
+    },
+    {
+      "time": "2026-11-12T14:46:15.848604",
+      "type": "SELL",
+      "ticker": "OTIS",
+      "price": 78.39,
+      "amount": 591.0
+    },
+    {
+      "time": "2026-11-12T14:46:18.642129",
+      "type": "SELL",
+      "ticker": "YUM",
+      "price": 162.0,
+      "amount": 288.0
+    },
+    {
+      "time": "2026-11-12T14:46:21.469568",
+      "type": "SELL",
+      "ticker": "EFX",
+      "price": 191.16,
+      "amount": 244.0
+    },
+    {
+      "time": "2026-11-12T14:46:24.353032",
+      "type": "SELL",
+      "ticker": "ADSK",
+      "price": 261.5,
+      "amount": 178.0
+    },
+    {
+      "time": "2026-11-12T14:59:33.013664",
+      "type": "BUY",
+      "ticker": "ABT",
+      "price": 109.79,
+      "amount": 423.0
+    },
+    {
+      "time": "2026-11-12T15:00:38.265144",
+      "type": "SELL",
+      "ticker": "SYF",
+      "price": 72.78,
+      "amount": 623.0
+    },
+    {
+      "time": "2026-11-12T15:00:49.345512",
+      "type": "BUY",
+      "ticker": "PSA",
+      "price": 336.77,
+      "amount": 137.0
+    },
+    {
+      "time": "2026-11-12T15:05:06.030064",
+      "type": "SELL",
+      "ticker": "PSA",
+      "price": 336.84,
+      "amount": 137.0
+    },
+    {
+      "time": "2026-11-12T15:21:20.071482",
+      "type": "BUY",
+      "ticker": "AMCR",
+      "price": 44.53,
+      "amount": 1043.0
+    },
+    {
+      "time": "2026-11-12T15:23:35.268853",
+      "type": "BUY",
+      "ticker": "PSA",
+      "price": 334.98,
+      "amount": 138.0
+    },
+    {
+      "time": "2026-11-12T15:25:48.089101",
+      "type": "BUY",
+      "ticker": "IFF",
+      "price": 82.18,
+      "amount": 565.0
+    },
+    {
+      "time": "2026-11-12T19:31:13.239857",
+      "type": "BUY",
+      "ticker": "OTIS",
+      "price": 77.57,
+      "amount": 598.0
+    },
+    {
+      "time": "2026-11-12T19:45:21.834100",
+      "type": "BUY",
+      "ticker": "YUM",
+      "price": 159.55,
+      "amount": 291.0
+    },
+    {
+      "time": "2026-11-12T20:55:55.986748",
+      "type": "BUY",
+      "ticker": "D",
+      "price": 67.73,
+      "amount": 685.0
+    }
+  ]
+}
