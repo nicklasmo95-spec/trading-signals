@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T20:50:38+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-12T09:52:30",
+      "symbol": "WDAY",
+      "side": "buy",
+      "qty": 7.0,
+      "price": null,
+      "notional": null,
+      "reason": "afstemning: +7 stk fra Alpaca (fx delvist fyld)",
+      "entry_date": "2026-11-11",
+      "entry_price": 189.6598,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": null
+    }
+  ]
+}
