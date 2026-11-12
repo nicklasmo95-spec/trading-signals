@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T11:01:27+00:00",
+  "rule": "RSI-2 < 10 og kurs > SMA200 udloeser koeb; listen er de 20 laveste RSI-2 over SMA200",
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "OTIS",
+      "rsi2": 9.87,
+      "close": 77.5,
+      "sma200": 75.3,
+      "pct_over_sma200": 2.93,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 2,
+      "ticker": "AMCR",
+      "rsi2": 12.32,
+      "close": 44.39,
+      "sma200": 42.31,
+      "pct_over_sma200": 4.93,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 3,
+      "ticker": "ABT",
+      "rsi2": 17.45,
+      "close": 109.29,
+      "sma200": 100.41,
+      "pct_over_sma200": 8.85,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 4,
+      "ticker": "DHI",
+      "rsi2": 17.9,
+      "close": 147.48,
+      "sma200": 147.05,
+      "pct_over_sma200": 0.29,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 5,
+      "ticker": "MNST",
+      "rsi2": 19.19,
+      "close": 45.4,
+      "sma200": 43.34,
+      "pct_over_sma200": 4.75,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 6,
+      "ticker": "MSFT",
+      "rsi2": 19.76,
+      "close": 521.13,
+      "sma200": 439.8,
+      "pct_over_sma200": 18.49,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 7,
+      "ticker": "IFF",
+      "rsi2": 20.13,
+      "close": 82.65,
+      "sma200": 78.56,
+      "pct_over_sma200": 5.21,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 8,
+      "ticker": "VMRK",
+      "rsi2": 20.63,
+      "close": 64.63,
+      "sma200": 62.98,
+      "pct_over_sma200": 2.62,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 9,
+      "ticker": "BXP",
+      "rsi2": 21.24,
+      "close": 63.44,
+      "sma200": 60.91,
+      "pct_over_sma200": 4.15,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 10,
+      "ticker": "PHM",
+      "rsi2": 22.16,
+      "close": 129.5,
+      "sma200": 123.82,
+      "pct_over_sma200": 4.59,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 11,
+      "ticker": "YUM",
+      "rsi2": 23.52,
+      "close": 160.21,
+      "sma200": 152.71,
+      "pct_over_sma200": 4.91,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 12,
+      "ticker": "BALL",
+      "rsi2": 23.53,
+      "close": 65.81,
+      "sma200": 61.04,
+      "pct_over_sma200": 7.81,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 13,
+      "ticker": "D",
+      "rsi2": 23.97,
+      "close": 68.06,
+      "sma200": 64.29,
+      "pct_over_sma200": 5.87,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 14,
+      "ticker": "PSA",
+      "rsi2": 24.06,
+      "close": 335.73,
+      "sma200": 300.71,
+      "pct_over_sma200": 11.65,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 15,
+      "ticker": "SOLV",
+      "rsi2": 24.76,
+      "close": 88.62,
+      "sma200": 78.72,
+      "pct_over_sma200": 12.58,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 16,
+      "ticker": "ACN",
+      "rsi2": 26.19,
+      "close": 253.66,
+      "sma200": 187.53,
+      "pct_over_sma200": 35.27,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 17,
+      "ticker": "ABNB",
+      "rsi2": 26.81,
+      "close": 181.13,
+      "sma200": 148.58,
+      "pct_over_sma200": 21.91,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 18,
+      "ticker": "ADSK",
+      "rsi2": 27.44,
+      "close": 260.01,
+      "sma200": 233.82,
+      "pct_over_sma200": 11.2,
+      "buy_signal_now": false
+    }
+  ]
+}
