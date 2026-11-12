@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-11T20:50:10+00:00",
+  "updated_at": "2026-11-12T12:01:08+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "exit-tjek",
+  "last_event": "scan",
   "account": {
-    "equity": 100025.54,
-    "cash": 68700.26,
-    "day_pl": 240.06,
-    "day_pl_pct": 0.24
+    "equity": 100063.78,
+    "cash": 68700.25,
+    "day_pl": 17.47,
+    "day_pl_pct": 0.02
   },
   "max_positions": 20,
   "positions": [
@@ -20,11 +20,11 @@
       "entry_price": 200.23,
       "entry_date": "2026-11-09",
       "stop": 192.22,
-      "days": 3,
+      "days": 4,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 197.16,
-      "upl_pct": -1.53
+      "price": 197.1,
+      "upl_pct": -1.56
     },
     {
       "ticker": "CVX",
@@ -32,11 +32,11 @@
       "entry_price": 210.87,
       "entry_date": "2026-11-09",
       "stop": 202.44,
-      "days": 3,
+      "days": 4,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 212.76,
-      "upl_pct": 0.9
+      "price": 213.28,
+      "upl_pct": 1.14
     },
     {
       "ticker": "PM",
@@ -44,11 +44,11 @@
       "entry_price": 195.3,
       "entry_date": "2026-11-09",
       "stop": 187.49,
-      "days": 3,
+      "days": 4,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 196.48,
-      "upl_pct": 0.6
+      "price": 196.34,
+      "upl_pct": 0.53
     },
     {
       "ticker": "SYF",
@@ -56,23 +56,23 @@
       "entry_price": 73.07,
       "entry_date": "2026-11-09",
       "stop": 70.15,
-      "days": 3,
+      "days": 4,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 71.88,
-      "upl_pct": -1.64
+      "price": 71.97,
+      "upl_pct": -1.51
     },
     {
       "ticker": "WDAY",
-      "qty": 26.216105,
-      "entry_price": 190.37,
+      "qty": 33.216105,
+      "entry_price": 189.66,
       "entry_date": "2026-11-11",
-      "stop": 182.76,
-      "days": 1,
+      "stop": 182.07,
+      "days": 2,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 191.49,
-      "upl_pct": 0.59
+      "price": 191.2,
+      "upl_pct": 0.81
     },
     {
       "ticker": "XOM",
@@ -80,18 +80,18 @@
       "entry_price": 164.66,
       "entry_date": "2026-11-09",
       "stop": 158.07,
-      "days": 3,
+      "days": 4,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 166.32,
-      "upl_pct": 1.01
+      "price": 166.68,
+      "upl_pct": 1.22
     }
   ],
   "rules": {
     "rsi_entry": 10.0,
-    "rsi_exit": 90.0,
-    "stop_pct": 4.0,
-    "max_hold_days": 4,
+    "rsi_exit": 101.0,
+    "stop_pct": 10.0,
+    "max_hold_days": 0,
     "sma_exit": 5
   }
 }
