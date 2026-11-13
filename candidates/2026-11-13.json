@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T11:00:56+00:00",
+  "rule": "RSI-2 < 10 og kurs > SMA200 udloeser koeb; listen er de 20 laveste RSI-2 over SMA200",
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "ABT",
+      "rsi2": 6.05,
+      "close": 107.25,
+      "sma200": 100.42,
+      "pct_over_sma200": 6.8,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 2,
+      "ticker": "OTIS",
+      "rsi2": 6.23,
+      "close": 77.14,
+      "sma200": 75.25,
+      "pct_over_sma200": 2.52,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 3,
+      "ticker": "AMCR",
+      "rsi2": 6.4,
+      "close": 43.8,
+      "sma200": 42.31,
+      "pct_over_sma200": 3.51,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 4,
+      "ticker": "IFF",
+      "rsi2": 6.88,
+      "close": 80.38,
+      "sma200": 78.61,
+      "pct_over_sma200": 2.26,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 5,
+      "ticker": "SW",
+      "rsi2": 7.6,
+      "close": 43.18,
+      "sma200": 43.05,
+      "pct_over_sma200": 0.3,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 6,
+      "ticker": "PSA",
+      "rsi2": 8.05,
+      "close": 333.33,
+      "sma200": 301.04,
+      "pct_over_sma200": 10.72,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 7,
+      "ticker": "GPN",
+      "rsi2": 8.5,
+      "close": 88.19,
+      "sma200": 77.63,
+      "pct_over_sma200": 13.6,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 8,
+      "ticker": "D",
+      "rsi2": 9.54,
+      "close": 67.51,
+      "sma200": 64.33,
+      "pct_over_sma200": 4.94,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 9,
+      "ticker": "NEM",
+      "rsi2": 9.54,
+      "close": 112.64,
+      "sma200": 111.91,
+      "pct_over_sma200": 0.65,
+      "buy_signal_now": true
+    },
+    {
+      "rank": 10,
+      "ticker": "YUM",
+      "rsi2": 10.33,
+      "close": 159.34,
+      "sma200": 152.75,
+      "pct_over_sma200": 4.31,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 11,
+      "ticker": "ISRG",
+      "rsi2": 10.69,
+      "close": 439.89,
+      "sma200": 429.7,
+      "pct_over_sma200": 2.37,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 12,
+      "ticker": "EFX",
+      "rsi2": 10.79,
+      "close": 186.78,
+      "sma200": 175.23,
+      "pct_over_sma200": 6.59,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 13,
+      "ticker": "WSM",
+      "rsi2": 10.85,
+      "close": 250.38,
+      "sma200": 215.54,
+      "pct_over_sma200": 16.16,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 14,
+      "ticker": "BALL",
+      "rsi2": 11.06,
+      "close": 64.91,
+      "sma200": 61.09,
+      "pct_over_sma200": 6.26,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 15,
+      "ticker": "VMRK",
+      "rsi2": 11.2,
+      "close": 63.93,
+      "sma200": 63.0,
+      "pct_over_sma200": 1.47,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 16,
+      "ticker": "PHM",
+      "rsi2": 11.28,
+      "close": 126.9,
+      "sma200": 123.84,
+      "pct_over_sma200": 2.47,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 17,
+      "ticker": "VEEV",
+      "rsi2": 11.76,
+      "close": 302.42,
+      "sma200": 213.07,
+      "pct_over_sma200": 41.93,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 18,
+      "ticker": "PFE",
+      "rsi2": 11.94,
+      "close": 28.83,
+      "sma200": 26.18,
+      "pct_over_sma200": 10.13,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 19,
+      "ticker": "MRNA",
+      "rsi2": 11.95,
+      "close": 231.35,
+      "sma200": 95.53,
+      "pct_over_sma200": 142.18,
+      "buy_signal_now": false
+    },
+    {
+      "rank": 20,
+      "ticker": "AJG",
+      "rsi2": 12.17,
+      "close": 277.28,
+      "sma200": 232.54,
+      "pct_over_sma200": 19.24,
+      "buy_signal_now": false
+    }
+  ]
+}
