@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T21:05:00+00:00",
+  "trades": [
+    {
+      "time": "2026-11-13T14:30:11.108025",
+      "type": "BUY",
+      "ticker": "SW",
+      "price": 43.19,
+      "amount": 1076.0
+    },
+    {
+      "time": "2026-11-13T14:30:14.765046",
+      "type": "BUY",
+      "ticker": "GPN",
+      "price": 88.2,
+      "amount": 526.0
+    },
+    {
+      "time": "2026-11-13T14:30:21.482143",
+      "type": "BUY",
+      "ticker": "MRNA",
+      "price": 231.38,
+      "amount": 200.0
+    },
+    {
+      "time": "2026-11-13T14:31:30.083695",
+      "type": "BUY",
+      "ticker": "WSM",
+      "price": 250.46,
+      "amount": 185.0
+    },
+    {
+      "time": "2026-11-13T14:34:59.186841",
+      "type": "BUY",
+      "ticker": "PHM",
+      "price": 126.95,
+      "amount": 365.0
+    },
+    {
+      "time": "2026-11-13T14:37:16.241398",
+      "type": "BUY",
+      "ticker": "PFE",
+      "price": 28.84,
+      "amount": 1612.0
+    },
+    {
+      "time": "2026-11-13T14:38:25.194594",
+      "type": "BUY",
+      "ticker": "VEEV",
+      "price": 302.46,
+      "amount": 153.0
+    },
+    {
+      "time": "2026-11-13T14:45:08.519394",
+      "type": "SELL",
+      "ticker": "PSA",
+      "price": 337.29,
+      "amount": 138.0
+    },
+    {
+      "time": "2026-11-13T14:45:11.489854",
+      "type": "SELL",
+      "ticker": "OTIS",
+      "price": 78.06,
+      "amount": 598.0
+    },
+    {
+      "time": "2026-11-13T14:45:14.224447",
+      "type": "SELL",
+      "ticker": "YUM",
+      "price": 162.0,
+      "amount": 291.0
+    },
+    {
+      "time": "2026-11-13T14:45:18.583366",
+      "type": "SELL",
+      "ticker": "VEEV",
+      "price": 305.5,
+      "amount": 153.0
+    },
+    {
+      "time": "2026-11-13T14:47:38.544711",
+      "type": "BUY",
+      "ticker": "VEEV",
+      "price": 304.54,
+      "amount": 152.0
+    },
+    {
+      "time": "2026-11-13T14:48:44.144855",
+      "type": "SELL",
+      "ticker": "VEEV",
+      "price": 304.19,
+      "amount": 152.0
+    },
+    {
+      "time": "2026-11-13T14:49:56.199820",
+      "type": "BUY",
+      "ticker": "VEEV",
+      "price": 303.53,
+      "amount": 153.0
+    },
+    {
+      "time": "2026-11-13T15:23:33.068332",
+      "type": "BUY",
+      "ticker": "NEM",
+      "price": 113.53,
+      "amount": 409.0
+    },
+    {
+      "time": "2026-11-13T18:22:09.811126",
+      "type": "BUY",
+      "ticker": "PSA",
+      "price": 333.89,
+      "amount": 139.0
+    },
+    {
+      "time": "2026-11-13T20:40:56.735100",
+      "type": "BUY",
+      "ticker": "OTIS",
+      "price": 77.38,
+      "amount": 601.0
+    }
+  ]
+}
