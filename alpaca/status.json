@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-13T14:35:59+00:00",
+  "updated_at": "2026-11-13T20:50:23+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "køb",
+  "last_event": "exit-tjek",
   "account": {
-    "equity": 100255.87,
+    "equity": 100426.65,
     "cash": 23521.96,
-    "day_pl": 165.17,
-    "day_pl_pct": 0.17
+    "day_pl": 335.95,
+    "day_pl_pct": 0.34
   },
   "max_positions": 20,
   "positions": [
@@ -23,8 +23,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 107.84,
-      "upl_pct": -0.09
+      "price": 108.5,
+      "upl_pct": 0.51
     },
     {
       "ticker": "AMCR",
@@ -35,8 +35,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 44.16,
-      "upl_pct": -0.09
+      "price": 43.72,
+      "upl_pct": -1.09
     },
     {
       "ticker": "COF",
@@ -47,8 +47,8 @@
       "days": 5,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 195.54,
-      "upl_pct": -2.34
+      "price": 194.9,
+      "upl_pct": -2.66
     },
     {
       "ticker": "CVX",
@@ -58,9 +58,9 @@
       "stop": 202.44,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 218.5,
-      "upl_pct": 3.62
+      "protected": false,
+      "price": 218.79,
+      "upl_pct": 3.76
     },
     {
       "ticker": "D",
@@ -71,8 +71,8 @@
       "days": 1,
       "ai_decision": "VETO",
       "protected": true,
-      "price": 67.38,
-      "upl_pct": -0.05
+      "price": 67.49,
+      "upl_pct": 0.12
     },
     {
       "ticker": "GPN",
@@ -83,8 +83,8 @@
       "days": 1,
       "ai_decision": "VETO",
       "protected": true,
-      "price": 88.69,
-      "upl_pct": -0.5
+      "price": 91.62,
+      "upl_pct": 2.78
     },
     {
       "ticker": "IFF",
@@ -95,8 +95,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 80.64,
-      "upl_pct": -0.63
+      "price": 81.12,
+      "upl_pct": -0.03
     },
     {
       "ticker": "NEM",
@@ -107,8 +107,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 113.36,
-      "upl_pct": -0.09
+      "price": 112.87,
+      "upl_pct": -0.52
     },
     {
       "ticker": "OTIS",
@@ -119,8 +119,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 77.44,
-      "upl_pct": -0.31
+      "price": 77.33,
+      "upl_pct": -0.46
     },
     {
       "ticker": "PM",
@@ -130,9 +130,9 @@
       "stop": 187.49,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 197.53,
-      "upl_pct": 1.14
+      "protected": false,
+      "price": 198.47,
+      "upl_pct": 1.62
     },
     {
       "ticker": "PSA",
@@ -143,8 +143,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 333.35,
-      "upl_pct": -0.43
+      "price": 332.06,
+      "upl_pct": -0.82
     },
     {
       "ticker": "SW",
@@ -155,8 +155,8 @@
       "days": 1,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 42.88,
-      "upl_pct": -0.35
+      "price": 42.34,
+      "upl_pct": -1.62
     },
     {
       "ticker": "SYF",
@@ -166,9 +166,9 @@
       "stop": 70.15,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 72.7,
-      "upl_pct": -0.51
+      "protected": false,
+      "price": 72.25,
+      "upl_pct": -1.12
     },
     {
       "ticker": "WDAY",
@@ -178,9 +178,9 @@
       "stop": 182.07,
       "days": 3,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 191.29,
-      "upl_pct": 0.86
+      "protected": false,
+      "price": 196.47,
+      "upl_pct": 3.59
     },
     {
       "ticker": "XOM",
@@ -190,9 +190,9 @@
       "stop": 158.07,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 170.62,
-      "upl_pct": 3.62
+      "protected": false,
+      "price": 170.2,
+      "upl_pct": 3.36
     }
   ],
   "rules": {
