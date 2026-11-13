@@ -1,19 +1,43 @@
 {
-  "updated_at": "2026-11-13T12:01:21+00:00",
+  "updated_at": "2026-11-13T14:35:59+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "scan",
+  "last_event": "køb",
   "account": {
-    "equity": 100181.29,
-    "cash": 68700.25,
-    "day_pl": 90.59,
-    "day_pl_pct": 0.09
+    "equity": 100255.87,
+    "cash": 23521.96,
+    "day_pl": 165.17,
+    "day_pl_pct": 0.17
   },
   "max_positions": 20,
   "positions": [
+    {
+      "ticker": "ABT",
+      "qty": 46.505099,
+      "entry_price": 107.94,
+      "entry_date": "2026-11-13",
+      "stop": 97.15,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 107.84,
+      "upl_pct": -0.09
+    },
+    {
+      "ticker": "AMCR",
+      "qty": 113.570362,
+      "entry_price": 44.2,
+      "entry_date": "2026-11-13",
+      "stop": 39.78,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 44.16,
+      "upl_pct": -0.09
+    },
     {
       "ticker": "COF",
       "qty": 24.971233,
@@ -23,8 +47,8 @@
       "days": 5,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 193.55,
-      "upl_pct": -3.34
+      "price": 195.54,
+      "upl_pct": -2.34
     },
     {
       "ticker": "CVX",
@@ -34,9 +58,69 @@
       "stop": 202.44,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": false,
-      "price": 216.49,
-      "upl_pct": 2.67
+      "protected": true,
+      "price": 218.5,
+      "upl_pct": 3.62
+    },
+    {
+      "ticker": "D",
+      "qty": 74.466845,
+      "entry_price": 67.41,
+      "entry_date": "2026-11-13",
+      "stop": 60.67,
+      "days": 1,
+      "ai_decision": "VETO",
+      "protected": true,
+      "price": 67.38,
+      "upl_pct": -0.05
+    },
+    {
+      "ticker": "GPN",
+      "qty": 56.313776,
+      "entry_price": 89.14,
+      "entry_date": "2026-11-13",
+      "stop": 80.23,
+      "days": 1,
+      "ai_decision": "VETO",
+      "protected": true,
+      "price": 88.69,
+      "upl_pct": -0.5
+    },
+    {
+      "ticker": "IFF",
+      "qty": 61.85841,
+      "entry_price": 81.15,
+      "entry_date": "2026-11-13",
+      "stop": 73.04,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 80.64,
+      "upl_pct": -0.63
+    },
+    {
+      "ticker": "NEM",
+      "qty": 44.242993,
+      "entry_price": 113.46,
+      "entry_date": "2026-11-13",
+      "stop": 102.11,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 113.36,
+      "upl_pct": -0.09
+    },
+    {
+      "ticker": "OTIS",
+      "qty": 64.621653,
+      "entry_price": 77.68,
+      "entry_date": "2026-11-13",
+      "stop": 69.91,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 77.44,
+      "upl_pct": -0.31
     },
     {
       "ticker": "PM",
@@ -46,9 +130,33 @@
       "stop": 187.49,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": false,
-      "price": 196.93,
-      "upl_pct": 0.83
+      "protected": true,
+      "price": 197.53,
+      "upl_pct": 1.14
+    },
+    {
+      "ticker": "PSA",
+      "qty": 14.993907,
+      "entry_price": 334.79,
+      "entry_date": "2026-11-13",
+      "stop": 301.31,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 333.35,
+      "upl_pct": -0.43
+    },
+    {
+      "ticker": "SW",
+      "qty": 116.658378,
+      "entry_price": 43.03,
+      "entry_date": "2026-11-13",
+      "stop": 38.73,
+      "days": 1,
+      "ai_decision": "APPROVE",
+      "protected": true,
+      "price": 42.88,
+      "upl_pct": -0.35
     },
     {
       "ticker": "SYF",
@@ -59,8 +167,8 @@
       "days": 5,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 71.65,
-      "upl_pct": -1.94
+      "price": 72.7,
+      "upl_pct": -0.51
     },
     {
       "ticker": "WDAY",
@@ -70,9 +178,9 @@
       "stop": 182.07,
       "days": 3,
       "ai_decision": "APPROVE",
-      "protected": false,
-      "price": 190.63,
-      "upl_pct": 0.51
+      "protected": true,
+      "price": 191.29,
+      "upl_pct": 0.86
     },
     {
       "ticker": "XOM",
@@ -82,9 +190,9 @@
       "stop": 158.07,
       "days": 5,
       "ai_decision": "OFF",
-      "protected": false,
-      "price": 169.75,
-      "upl_pct": 3.09
+      "protected": true,
+      "price": 170.62,
+      "upl_pct": 3.62
     }
   ],
   "rules": {
