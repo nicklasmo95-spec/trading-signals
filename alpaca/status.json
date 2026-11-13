@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-12T20:50:36+00:00",
+  "updated_at": "2026-11-13T12:01:21+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "exit-tjek",
+  "last_event": "scan",
   "account": {
-    "equity": 100147.38,
+    "equity": 100181.29,
     "cash": 68700.25,
-    "day_pl": 101.07,
-    "day_pl_pct": 0.1
+    "day_pl": 90.59,
+    "day_pl_pct": 0.09
   },
   "max_positions": 20,
   "positions": [
@@ -20,11 +20,11 @@
       "entry_price": 200.23,
       "entry_date": "2026-11-09",
       "stop": 192.22,
-      "days": 4,
+      "days": 5,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 193.73,
-      "upl_pct": -3.25
+      "price": 193.55,
+      "upl_pct": -3.34
     },
     {
       "ticker": "CVX",
@@ -32,11 +32,11 @@
       "entry_price": 210.87,
       "entry_date": "2026-11-09",
       "stop": 202.44,
-      "days": 4,
+      "days": 5,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 216.72,
-      "upl_pct": 2.78
+      "price": 216.49,
+      "upl_pct": 2.67
     },
     {
       "ticker": "PM",
@@ -44,11 +44,11 @@
       "entry_price": 195.3,
       "entry_date": "2026-11-09",
       "stop": 187.49,
-      "days": 4,
+      "days": 5,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 197.79,
-      "upl_pct": 1.27
+      "price": 196.93,
+      "upl_pct": 0.83
     },
     {
       "ticker": "SYF",
@@ -56,11 +56,11 @@
       "entry_price": 73.07,
       "entry_date": "2026-11-09",
       "stop": 70.15,
-      "days": 4,
+      "days": 5,
       "ai_decision": "OFF",
       "protected": true,
-      "price": 71.75,
-      "upl_pct": -1.8
+      "price": 71.65,
+      "upl_pct": -1.94
     },
     {
       "ticker": "WDAY",
@@ -68,11 +68,11 @@
       "entry_price": 189.66,
       "entry_date": "2026-11-11",
       "stop": 182.07,
-      "days": 2,
+      "days": 3,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 190.81,
-      "upl_pct": 0.61
+      "price": 190.63,
+      "upl_pct": 0.51
     },
     {
       "ticker": "XOM",
@@ -80,11 +80,11 @@
       "entry_price": 164.66,
       "entry_date": "2026-11-09",
       "stop": 158.07,
-      "days": 4,
+      "days": 5,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 169.81,
-      "upl_pct": 3.13
+      "price": 169.75,
+      "upl_pct": 3.09
     }
   ],
   "rules": {
