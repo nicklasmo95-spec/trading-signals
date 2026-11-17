@@ -1,0 +1,510 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T21:05:07+00:00",
+  "trades": [
+    {
+      "time": "2026-11-17T14:30:16.391661",
+      "type": "SELL",
+      "ticker": "GPN",
+      "price": 89.86,
+      "amount": 526.0
+    },
+    {
+      "time": "2026-11-17T14:30:19.264301",
+      "type": "SELL",
+      "ticker": "SW",
+      "price": 41.93,
+      "amount": 961.0
+    },
+    {
+      "time": "2026-11-17T14:30:22.112025",
+      "type": "SELL",
+      "ticker": "WSM",
+      "price": 252.22,
+      "amount": 185.0
+    },
+    {
+      "time": "2026-11-17T14:30:24.901327",
+      "type": "SELL",
+      "ticker": "NEM",
+      "price": 110.38,
+      "amount": 409.0
+    },
+    {
+      "time": "2026-11-17T14:30:34.139449",
+      "type": "SELL",
+      "ticker": "PSA",
+      "price": 333.74,
+      "amount": 137.0
+    },
+    {
+      "time": "2026-11-17T14:30:39.343492",
+      "type": "BUY",
+      "ticker": "DE",
+      "price": 654.11,
+      "amount": 69.0
+    },
+    {
+      "time": "2026-11-17T14:30:42.554188",
+      "type": "BUY",
+      "ticker": "WAT",
+      "price": 453.75,
+      "amount": 100.0
+    },
+    {
+      "time": "2026-11-17T14:30:45.581255",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 79.83,
+      "amount": 571.0
+    },
+    {
+      "time": "2026-11-17T14:30:48.853919",
+      "type": "BUY",
+      "ticker": "CTSH",
+      "price": 62.32,
+      "amount": 732.0
+    },
+    {
+      "time": "2026-11-17T14:30:51.887785",
+      "type": "BUY",
+      "ticker": "ETR",
+      "price": 110.25,
+      "amount": 413.0
+    },
+    {
+      "time": "2026-11-17T14:31:59.594000",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 79.83,
+      "amount": 571.0
+    },
+    {
+      "time": "2026-11-17T14:32:04.857956",
+      "type": "BUY",
+      "ticker": "SNPS",
+      "price": 441.52,
+      "amount": 103.0
+    },
+    {
+      "time": "2026-11-17T14:46:39.537143",
+      "type": "SELL",
+      "ticker": "VEEV",
+      "price": 301.71,
+      "amount": 153.0
+    },
+    {
+      "time": "2026-11-17T14:46:46.697476",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 78.38,
+      "amount": 583.0
+    },
+    {
+      "time": "2026-11-17T14:47:54.696075",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.99,
+      "amount": 583.0
+    },
+    {
+      "time": "2026-11-17T14:47:59.420040",
+      "type": "BUY",
+      "ticker": "VEEV",
+      "price": 300.0,
+      "amount": 152.0
+    },
+    {
+      "time": "2026-11-17T15:04:50.842074",
+      "type": "SELL",
+      "ticker": "VMC",
+      "price": 280.53,
+      "amount": 165.0
+    },
+    {
+      "time": "2026-11-17T15:04:58.324361",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.42,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:06:06.243545",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.34,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:06:11.157293",
+      "type": "BUY",
+      "ticker": "PLTR",
+      "price": 160.88,
+      "amount": 283.0
+    },
+    {
+      "time": "2026-11-17T15:07:17.242525",
+      "type": "SELL",
+      "ticker": "AMCR",
+      "price": 43.98,
+      "amount": 1042.0
+    },
+    {
+      "time": "2026-11-17T15:07:23.956450",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.8,
+      "amount": 601.0
+    },
+    {
+      "time": "2026-11-17T15:08:31.856386",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.72,
+      "amount": 601.0
+    },
+    {
+      "time": "2026-11-17T15:09:38.386183",
+      "type": "SELL",
+      "ticker": "ZBH",
+      "price": 104.15,
+      "amount": 451.0
+    },
+    {
+      "time": "2026-11-17T15:09:46.955440",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.48,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:10:56.100260",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.41,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:12:09.457803",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.19,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:13:17.341226",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.52,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:14:30.914495",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.46,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:15:38.714732",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.41,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:16:51.230716",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.0,
+      "amount": 606.0
+    },
+    {
+      "time": "2026-11-17T15:17:58.901071",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.0,
+      "amount": 606.0
+    },
+    {
+      "time": "2026-11-17T15:19:11.533922",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.26,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:20:19.484936",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.33,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:21:35.699012",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.47,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:22:43.178720",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.48,
+      "amount": 603.0
+    },
+    {
+      "time": "2026-11-17T15:23:55.697376",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.81,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:25:03.733898",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.56,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:26:16.442456",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.24,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:27:24.379782",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.43,
+      "amount": 604.0
+    },
+    {
+      "time": "2026-11-17T15:28:36.970650",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.75,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:29:44.671087",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.8,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:30:57.198742",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.82,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:32:04.690751",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.53,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:33:17.402069",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.67,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:33:20.418021",
+      "type": "BUY",
+      "ticker": "APH",
+      "price": 75.89,
+      "amount": 598.0
+    },
+    {
+      "time": "2026-11-17T15:34:28.421366",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.91,
+      "amount": 600.0
+    },
+    {
+      "time": "2026-11-17T15:35:41.304886",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 75.91,
+      "amount": 598.0
+    },
+    {
+      "time": "2026-11-17T15:36:49.500637",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 75.87,
+      "amount": 598.0
+    },
+    {
+      "time": "2026-11-17T15:36:54.083724",
+      "type": "BUY",
+      "ticker": "EMR",
+      "price": 161.56,
+      "amount": 280.0
+    },
+    {
+      "time": "2026-11-17T16:08:20.697497",
+      "type": "SELL",
+      "ticker": "ROST",
+      "price": 220.92,
+      "amount": 180.0
+    },
+    {
+      "time": "2026-11-17T16:08:29.340436",
+      "type": "BUY",
+      "ticker": "AMCR",
+      "price": 43.77,
+      "amount": 1031.0
+    },
+    {
+      "time": "2026-11-17T17:40:30.084485",
+      "type": "SELL",
+      "ticker": "AMCR",
+      "price": 43.92,
+      "amount": 1031.0
+    },
+    {
+      "time": "2026-11-17T17:40:35.006542",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.68,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:41:43.584412",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.66,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:42:55.530686",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.6,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:44:03.091840",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.54,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:45:15.759374",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.64,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:46:23.720652",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.67,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:47:36.907658",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.68,
+      "amount": 588.0
+    },
+    {
+      "time": "2026-11-17T17:48:45.612779",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.65,
+      "amount": 588.0
+    },
+    {
+      "time": "2026-11-17T17:49:57.616790",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.58,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:51:05.804808",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.63,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:52:19.814037",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.55,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:53:27.534178",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.38,
+      "amount": 589.0
+    },
+    {
+      "time": "2026-11-17T17:54:40.238703",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.26,
+      "amount": 591.0
+    },
+    {
+      "time": "2026-11-17T17:55:48.264726",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.32,
+      "amount": 591.0
+    },
+    {
+      "time": "2026-11-17T17:57:00.196255",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.39,
+      "amount": 590.0
+    },
+    {
+      "time": "2026-11-17T17:58:08.165706",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.39,
+      "amount": 590.0
+    },
+    {
+      "time": "2026-11-17T17:59:20.365616",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 76.37,
+      "amount": 590.0
+    },
+    {
+      "time": "2026-11-17T18:00:28.727363",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 76.39,
+      "amount": 590.0
+    },
+    {
+      "time": "2026-11-17T18:00:33.634361",
+      "type": "BUY",
+      "ticker": "AMCR",
+      "price": 43.87,
+      "amount": 1027.0
+    }
+  ]
+}
