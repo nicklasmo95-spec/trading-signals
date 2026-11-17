@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T20:50:26+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-17T14:33:41",
+      "symbol": "ILMN",
+      "side": "buy",
+      "qty": 24.5882,
+      "price": 201.4449,
+      "notional": 4953.17,
+      "reason": "RSI2 2.8",
+      "entry_date": "2026-11-17",
+      "entry_price": 201.4449,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "62481d54-dc56-49fc-916e-decd586f7cbf"
+    }
+  ]
+}
