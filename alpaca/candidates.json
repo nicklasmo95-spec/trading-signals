@@ -1,202 +1,200 @@
 {
-  "date": "2026-11-16",
-  "generated_at": "2026-11-16T12:01:02+00:00",
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T12:01:12+00:00",
   "broker": "alpaca",
   "ai_mode": "shadow",
   "rule": "RSI-2 < 10 og kurs > SMA200 udløser køb; listen er de 20 laveste RSI-2 over SMA200",
   "candidates": [
     {
-      "ticker": "PSA",
-      "rsi2": 5.71,
-      "close": 332.59,
-      "sma200": 301.36,
-      "pct_over_sma200": 10.36,
+      "ticker": "ILMN",
+      "rsi2": 2.79,
+      "close": 198.0,
+      "sma200": 179.78,
+      "pct_over_sma200": 10.13,
       "buy_signal_now": true,
-      "rank": 1
+      "rank": 1,
+      "ai_decision": "APPROVE",
+      "ai_reason": "Nyhederne nævner ingen earnings inden for 5 dage, ingen M&A, guidance-nedjustering de seneste 3 dage, distress eller indeksændring. Insidersalg og kursmål-ændringer er ikke vetogrunde."
     },
     {
-      "ticker": "AMCR",
-      "rsi2": 6.4,
-      "close": 43.8,
-      "sma200": 42.32,
-      "pct_over_sma200": 3.49,
+      "ticker": "VEEV",
+      "rsi2": 3.12,
+      "close": 299.28,
+      "sma200": 214.01,
+      "pct_over_sma200": 39.85,
       "buy_signal_now": true,
       "rank": 2
     },
     {
-      "ticker": "VRTX",
-      "rsi2": 7.26,
-      "close": 538.6,
-      "sma200": 483.34,
-      "pct_over_sma200": 11.43,
+      "ticker": "RVTY",
+      "rsi2": 3.44,
+      "close": 148.85,
+      "sma200": 114.14,
+      "pct_over_sma200": 30.42,
       "buy_signal_now": true,
       "rank": 3,
       "ai_decision": "APPROVE",
-      "ai_reason": "Ingen earnings, M&A, FDA-afgørelse eller guidance-nedjustering i holdeperioden. Evotec-produktionspausen for povetacicept er en pipeline-nyhed uden konkret afgørelsesdato; insiderhandel er rutine."
+      "ai_reason": "Seneste regnskab var 3. nov, næste ventes uden for holdeperioden. Investor Day er strategisk, ikke en nedjustering. Ingen M&A, distress, retssag eller guidance-nedjustering nævnt."
     },
     {
       "ticker": "MRNA",
-      "rsi2": 7.48,
-      "close": 223.37,
-      "sma200": 96.41,
-      "pct_over_sma200": 131.68,
+      "rsi2": 4.25,
+      "close": 215.27,
+      "sma200": 97.27,
+      "pct_over_sma200": 121.32,
       "buy_signal_now": true,
-      "rank": 4,
-      "ai_decision": "APPROVE",
-      "ai_reason": "Nyhederne nævner ingen earnings, M&A, delisting eller ny retssag inden for holdeperioden. Guidance blev hævet 12. nov., og litigation-settlementet er omtalt som allerede kendt."
+      "rank": 4
     },
     {
-      "ticker": "IQV",
-      "rsi2": 7.74,
-      "close": 265.12,
-      "sma200": 211.03,
-      "pct_over_sma200": 25.63,
+      "ticker": "EMR",
+      "rsi2": 4.29,
+      "close": 160.65,
+      "sma200": 146.92,
+      "pct_over_sma200": 9.34,
       "buy_signal_now": true,
       "rank": 5,
       "ai_decision": "APPROVE",
-      "ai_reason": "Ingen earnings inden for 5 dage (analytikerkommentarer 28.-29. okt. tyder på afsluttet regnskab), ingen M&A, ingen nedjustering. Retssag om privatlivskrav afvist, og kursmål er hævet."
-    },
-    {
-      "ticker": "VEEV",
-      "rsi2": 8.07,
-      "close": 301.53,
-      "sma200": 213.53,
-      "pct_over_sma200": 41.21,
-      "buy_signal_now": true,
-      "rank": 6,
-      "ai_decision": "APPROVE",
-      "ai_reason": "Regnskab er først 3. december, udenfor 1-5 handelsdages holdeperiode. Ingen nedjustering, M&A, distress eller indeksfare; analytikere hæver kursmål."
-    },
-    {
-      "ticker": "ZBH",
-      "rsi2": 9.49,
-      "close": 103.21,
-      "sma200": 92.16,
-      "pct_over_sma200": 11.99,
-      "buy_signal_now": true,
-      "rank": 7,
-      "ai_decision": "APPROVE",
-      "ai_reason": "Nyhederne viser analytikerkursmål-justeringer, en konferencepræsentation og en produktlancering. Ingen earnings, M&A, guidance-nedjustering, juridisk sag eller distress er nævnt."
-    },
-    {
-      "ticker": "TSN",
-      "rsi2": 9.52,
-      "close": 58.82,
-      "sma200": 58.79,
-      "pct_over_sma200": 0.04,
-      "buy_signal_now": true,
-      "rank": 8,
-      "ai_decision": "VETO",
-      "ai_reason": "Tyson Foods har kvartalsregnskab (Q4) lige om hånden. Nyhederne fra 13. nov. siger 'Earnings Are Imminent', og holdeperioden på 1-5 dage dækker regnskabsdatoen."
-    },
-    {
-      "ticker": "UAL",
-      "rsi2": 9.55,
-      "close": 109.31,
-      "sma200": 108.29,
-      "pct_over_sma200": 0.94,
-      "buy_signal_now": true,
-      "rank": 9,
-      "ai_decision": "APPROVE",
-      "ai_reason": "FAA-ground stop og driftsforstyrrelser er midlertidige og ikke en veto-grund. Ingen nævnt earnings, guidance-nedjustering, M&A, retssag eller distress inden for holdeperioden."
-    },
-    {
-      "ticker": "ILMN",
-      "rsi2": 10.43,
-      "close": 207.01,
-      "sma200": 179.52,
-      "pct_over_sma200": 15.32,
-      "buy_signal_now": false,
-      "rank": 10
-    },
-    {
-      "ticker": "VMC",
-      "rsi2": 10.49,
-      "close": 278.63,
-      "sma200": 278.33,
-      "pct_over_sma200": 0.11,
-      "buy_signal_now": false,
-      "rank": 11
-    },
-    {
-      "ticker": "CCL",
-      "rsi2": 10.77,
-      "close": 29.23,
-      "sma200": 26.84,
-      "pct_over_sma200": 8.91,
-      "buy_signal_now": false,
-      "rank": 12
-    },
-    {
-      "ticker": "MMM",
-      "rsi2": 11.63,
-      "close": 183.66,
-      "sma200": 160.85,
-      "pct_over_sma200": 14.18,
-      "buy_signal_now": false,
-      "rank": 13
-    },
-    {
-      "ticker": "RVTY",
-      "rsi2": 12.16,
-      "close": 154.39,
-      "sma200": 113.93,
-      "pct_over_sma200": 35.51,
-      "buy_signal_now": false,
-      "rank": 14
-    },
-    {
-      "ticker": "DAL",
-      "rsi2": 13.14,
-      "close": 86.25,
-      "sma200": 77.3,
-      "pct_over_sma200": 11.57,
-      "buy_signal_now": false,
-      "rank": 15
-    },
-    {
-      "ticker": "DOC",
-      "rsi2": 14.04,
-      "close": 19.98,
-      "sma200": 18.76,
-      "pct_over_sma200": 6.49,
-      "buy_signal_now": false,
-      "rank": 16
-    },
-    {
-      "ticker": "ROST",
-      "rsi2": 14.31,
-      "close": 231.68,
-      "sma200": 224.19,
-      "pct_over_sma200": 3.34,
-      "buy_signal_now": false,
-      "rank": 17
+      "ai_reason": "Regnskabet blev offentliggjort 4.-5. nov., så der er ingen earnings i holdeperioden. Nyhederne nævner ingen M&A, retssag, distress eller nedjusteret guidance; kun kursmål-justeringer fra analytikere."
     },
     {
       "ticker": "GM",
-      "rsi2": 14.43,
-      "close": 86.0,
+      "rsi2": 4.57,
+      "close": 83.67,
       "sma200": 80.69,
-      "pct_over_sma200": 6.58,
-      "buy_signal_now": false,
+      "pct_over_sma200": 3.69,
+      "buy_signal_now": true,
+      "rank": 6,
+      "ai_decision": "VETO",
+      "ai_reason": "New York State har anlagt retssag mod GM for vildledende praksis (10. nov). Myndighedssag er en navngiven vetogrund, og kursfaldet kan have fundamental baggrund."
+    },
+    {
+      "ticker": "ZBH",
+      "rsi2": 4.57,
+      "close": 101.41,
+      "sma200": 92.23,
+      "pct_over_sma200": 9.95,
+      "buy_signal_now": true,
+      "rank": 7
+    },
+    {
+      "ticker": "DE",
+      "rsi2": 4.85,
+      "close": 653.99,
+      "sma200": 611.01,
+      "pct_over_sma200": 7.03,
+      "buy_signal_now": true,
+      "rank": 8,
+      "ai_decision": "VETO",
+      "ai_reason": "Deere annoncerede produktionsomlægning og fabrikslukninger 9. nov. (restrukturering), og Q4-regnskabet er planlagt inden for kort tid; begge dele kan drive gap-risiko."
+    },
+    {
+      "ticker": "SNPS",
+      "rsi2": 5.65,
+      "close": 441.33,
+      "sma200": 440.97,
+      "pct_over_sma200": 0.08,
+      "buy_signal_now": true,
+      "rank": 9,
+      "ai_decision": "APPROVE",
+      "ai_reason": "Ingen konkret veto-grund i nyhederne. Earnings-datoen er annonceret, men fremgår ikke, og typisk ligger Synopsys' Q4-rapport senere end holdeperioden. Elliott-stake og kursmål-opjustering er ikke negative."
+    },
+    {
+      "ticker": "MMM",
+      "rsi2": 5.75,
+      "close": 181.68,
+      "sma200": 161.01,
+      "pct_over_sma200": 12.84,
+      "buy_signal_now": true,
+      "rank": 10
+    },
+    {
+      "ticker": "AMCR",
+      "rsi2": 5.83,
+      "close": 43.77,
+      "sma200": 42.33,
+      "pct_over_sma200": 3.4,
+      "buy_signal_now": true,
+      "rank": 11
+    },
+    {
+      "ticker": "VRTX",
+      "rsi2": 5.98,
+      "close": 537.79,
+      "sma200": 483.68,
+      "pct_over_sma200": 11.19,
+      "buy_signal_now": true,
+      "rank": 12
+    },
+    {
+      "ticker": "WAT",
+      "rsi2": 6.27,
+      "close": 453.42,
+      "sma200": 373.61,
+      "pct_over_sma200": 21.36,
+      "buy_signal_now": true,
+      "rank": 13
+    },
+    {
+      "ticker": "DOC",
+      "rsi2": 6.4,
+      "close": 19.84,
+      "sma200": 18.78,
+      "pct_over_sma200": 5.65,
+      "buy_signal_now": true,
+      "rank": 14
+    },
+    {
+      "ticker": "IQV",
+      "rsi2": 7.12,
+      "close": 264.73,
+      "sma200": 211.2,
+      "pct_over_sma200": 25.34,
+      "buy_signal_now": true,
+      "rank": 15
+    },
+    {
+      "ticker": "CCL",
+      "rsi2": 7.55,
+      "close": 29.03,
+      "sma200": 26.84,
+      "pct_over_sma200": 8.17,
+      "buy_signal_now": true,
+      "rank": 16
+    },
+    {
+      "ticker": "PLTR",
+      "rsi2": 7.62,
+      "close": 160.39,
+      "sma200": 153.79,
+      "pct_over_sma200": 4.29,
+      "buy_signal_now": true,
+      "rank": 17
+    },
+    {
+      "ticker": "CTSH",
+      "rsi2": 7.64,
+      "close": 62.29,
+      "sma200": 57.19,
+      "pct_over_sma200": 8.92,
+      "buy_signal_now": true,
       "rank": 18
     },
     {
-      "ticker": "PHM",
-      "rsi2": 14.82,
-      "close": 127.01,
-      "sma200": 123.84,
-      "pct_over_sma200": 2.56,
-      "buy_signal_now": false,
+      "ticker": "APH",
+      "rsi2": 8.06,
+      "close": 75.43,
+      "sma200": 75.37,
+      "pct_over_sma200": 0.08,
+      "buy_signal_now": true,
       "rank": 19
     },
     {
-      "ticker": "VTR",
-      "rsi2": 14.86,
-      "close": 88.92,
-      "sma200": 86.34,
-      "pct_over_sma200": 2.99,
-      "buy_signal_now": false,
+      "ticker": "ETR",
+      "rsi2": 8.06,
+      "close": 110.22,
+      "sma200": 107.09,
+      "pct_over_sma200": 2.92,
+      "buy_signal_now": true,
       "rank": 20
     }
   ]
