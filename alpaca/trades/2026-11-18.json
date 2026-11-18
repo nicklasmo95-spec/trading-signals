@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18T20:50:26+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-18T14:33:36",
+      "symbol": "ETR",
+      "side": "buy",
+      "qty": 23.0,
+      "price": 108.0235,
+      "notional": 2484.54,
+      "reason": "RSI2 1.4",
+      "entry_date": "2026-11-18",
+      "entry_price": 108.0235,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "e22b29f6-c658-48f7-acfd-3213d439d1e4"
+    },
+    {
+      "ts": "2026-11-18T20:29:59",
+      "symbol": "SYF",
+      "side": "sell",
+      "qty": 68.4274,
+      "price": 70.14,
+      "notional": 4799.4977,
+      "reason": "stop_boers",
+      "entry_date": "2026-11-09",
+      "entry_price": 73.07,
+      "pnl_usd": -200.49,
+      "ret_pct": -4.01,
+      "days_held": 8.0,
+      "ai_decision": "OFF",
+      "order_id": "6211cf3f-7a61-4e4d-9ed6-e751ad7e05ce"
+    }
+  ]
+}
