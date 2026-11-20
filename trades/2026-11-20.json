@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T21:05:38+00:00",
+  "trades": [
+    {
+      "time": "2026-11-20T14:30:10.904818",
+      "type": "SELL",
+      "ticker": "MMM",
+      "price": 178.51,
+      "amount": 252.0
+    },
+    {
+      "time": "2026-11-20T14:30:25.638258",
+      "type": "BUY",
+      "ticker": "NTRS",
+      "price": 166.77,
+      "amount": 249.0
+    },
+    {
+      "time": "2026-11-20T14:30:28.876894",
+      "type": "BUY",
+      "ticker": "FAST",
+      "price": 52.73,
+      "amount": 788.0
+    },
+    {
+      "time": "2026-11-20T14:30:32.218416",
+      "type": "BUY",
+      "ticker": "BLK",
+      "price": 1136.55,
+      "amount": 36.0
+    },
+    {
+      "time": "2026-11-20T14:30:35.990353",
+      "type": "BUY",
+      "ticker": "CTAS",
+      "price": 219.02,
+      "amount": 189.0
+    },
+    {
+      "time": "2026-11-20T14:30:39.197294",
+      "type": "BUY",
+      "ticker": "IQV",
+      "price": 250.44,
+      "amount": 166.0
+    },
+    {
+      "time": "2026-11-20T14:31:57.364633",
+      "type": "BUY",
+      "ticker": "BNY",
+      "price": 145.02,
+      "amount": 286.0
+    },
+    {
+      "time": "2026-11-20T14:45:21.350781",
+      "type": "SELL",
+      "ticker": "HD",
+      "price": 342.0,
+      "amount": 128.0
+    },
+    {
+      "time": "2026-11-20T14:47:38.776256",
+      "type": "SELL",
+      "ticker": "TRV",
+      "price": 396.46,
+      "amount": 109.0
+    },
+    {
+      "time": "2026-11-20T14:47:43.718159",
+      "type": "SELL",
+      "ticker": "CTAS",
+      "price": 222.52,
+      "amount": 189.0
+    },
+    {
+      "time": "2026-11-20T14:56:36.589275",
+      "type": "SELL",
+      "ticker": "MRNA",
+      "price": 205.37,
+      "amount": 217.0
+    },
+    {
+      "time": "2026-11-20T15:25:23.679039",
+      "type": "SELL",
+      "ticker": "ABBV",
+      "price": 289.39,
+      "amount": 149.0
+    },
+    {
+      "time": "2026-11-20T15:47:37.731817",
+      "type": "BUY",
+      "ticker": "PFG",
+      "price": 107.86,
+      "amount": 386.0
+    },
+    {
+      "time": "2026-11-20T15:58:39.933779",
+      "type": "SELL",
+      "ticker": "STT",
+      "price": 158.53,
+      "amount": 224.0
+    },
+    {
+      "time": "2026-11-20T19:45:23.286723",
+      "type": "SELL",
+      "ticker": "ETR",
+      "price": 105.4,
+      "amount": 368.0
+    },
+    {
+      "time": "2026-11-20T19:47:38.262438",
+      "type": "SELL",
+      "ticker": "JPM",
+      "price": 311.45,
+      "amount": 114.0
+    },
+    {
+      "time": "2026-11-20T20:55:12.057349",
+      "type": "BUY",
+      "ticker": "DOC",
+      "price": 74.66,
+      "amount": 551.0
+    },
+    {
+      "time": "2026-11-20T20:56:19.019367",
+      "type": "SELL",
+      "ticker": "DOC",
+      "price": 74.54,
+      "amount": 551.0
+    }
+  ]
+}
