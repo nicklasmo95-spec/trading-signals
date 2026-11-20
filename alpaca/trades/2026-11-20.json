@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T20:50:13+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-20T14:34:01",
+      "symbol": "VEEV",
+      "side": "buy",
+      "qty": 10.0,
+      "price": 263.43,
+      "notional": 2634.3,
+      "reason": "RSI2 0.1",
+      "entry_date": "2026-11-20",
+      "entry_price": 263.43,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "26da9913-4cd7-423a-8b01-e0ce96757251"
+    },
+    {
+      "ts": "2026-11-20T14:34:29",
+      "symbol": "ACN",
+      "side": "buy",
+      "qty": 21.4399,
+      "price": 222.81,
+      "notional": 4777.02,
+      "reason": "RSI2 0.4",
+      "entry_date": "2026-11-20",
+      "entry_price": 222.81,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "5939b0c7-2954-41f0-a199-b7d860bfeef0"
+    },
+    {
+      "ts": "2026-11-20T14:35:01",
+      "symbol": "PKG",
+      "side": "buy",
+      "qty": 19.8464,
+      "price": 240.7,
+      "notional": 4777.02,
+      "reason": "RSI2 0.6",
+      "entry_date": "2026-11-20",
+      "entry_price": 240.7,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "VETO",
+      "order_id": "298e7dee-3ee1-42f3-a264-807c59a7b757"
+    },
+    {
+      "ts": "2026-11-20T14:35:11",
+      "symbol": "DOC",
+      "side": "buy",
+      "qty": 244.5991,
+      "price": 19.53,
+      "notional": 4777.02,
+      "reason": "RSI2 0.6",
+      "entry_date": "2026-11-20",
+      "entry_price": 19.53,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "1ae85990-a2fc-4fb3-acb2-b8a5c90ab2bd"
+    }
+  ]
+}
