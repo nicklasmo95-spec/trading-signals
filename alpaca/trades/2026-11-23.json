@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "2026-11-23T20:50:33+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-23T14:36:29",
+      "symbol": "XOM",
+      "side": "sell",
+      "qty": 30.3655,
+      "price": 157.66,
+      "notional": 4787.4312,
+      "reason": "stop_boers",
+      "entry_date": "2026-11-09",
+      "entry_price": 164.66,
+      "pnl_usd": -212.56,
+      "ret_pct": -4.251,
+      "days_held": 11.0,
+      "ai_decision": "OFF",
+      "order_id": "fc5d422c-f806-4911-9fdc-69077c05e477"
+    }
+  ]
+}
