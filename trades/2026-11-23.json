@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "2026-11-23T21:05:12+00:00",
+  "trades": [
+    {
+      "time": "2026-11-23T14:30:21.851035",
+      "type": "SELL",
+      "ticker": "MCO",
+      "price": 467.22,
+      "amount": 79.0
+    },
+    {
+      "time": "2026-11-23T14:30:25.058117",
+      "type": "SELL",
+      "ticker": "INCY",
+      "price": 114.6,
+      "amount": 362.0
+    },
+    {
+      "time": "2026-11-23T14:30:33.855666",
+      "type": "SELL",
+      "ticker": "PFE",
+      "price": 27.42,
+      "amount": 1523.0
+    },
+    {
+      "time": "2026-11-23T14:30:40.119941",
+      "type": "SELL",
+      "ticker": "AMGN",
+      "price": 435.39,
+      "amount": 96.0
+    },
+    {
+      "time": "2026-11-23T14:30:50.309588",
+      "type": "SELL",
+      "ticker": "USB",
+      "price": 56.03,
+      "amount": 649.0
+    },
+    {
+      "time": "2026-11-23T14:30:57.254606",
+      "type": "SELL",
+      "ticker": "PKG",
+      "price": 234.2,
+      "amount": 167.0
+    },
+    {
+      "time": "2026-11-23T14:31:02.667272",
+      "type": "SELL",
+      "ticker": "GDDY",
+      "price": 99.54,
+      "amount": 358.0
+    },
+    {
+      "time": "2026-11-23T14:31:30.698431",
+      "type": "SELL",
+      "ticker": "NTRS",
+      "price": 162.27,
+      "amount": 249.0
+    },
+    {
+      "time": "2026-11-23T14:35:17.971341",
+      "type": "BUY",
+      "ticker": "PFE",
+      "price": 27.42,
+      "amount": 1516.0
+    },
+    {
+      "time": "2026-11-23T14:45:44.844526",
+      "type": "SELL",
+      "ticker": "IQV",
+      "price": 253.02,
+      "amount": 166.0
+    },
+    {
+      "time": "2026-11-23T14:45:47.819882",
+      "type": "SELL",
+      "ticker": "BLK",
+      "price": 1148.9,
+      "amount": 36.0
+    },
+    {
+      "time": "2026-11-23T14:45:51.057663",
+      "type": "SELL",
+      "ticker": "BNY",
+      "price": 147.0,
+      "amount": 286.0
+    },
+    {
+      "time": "2026-11-23T14:45:54.397211",
+      "type": "SELL",
+      "ticker": "PFG",
+      "price": 110.09,
+      "amount": 386.0
+    },
+    {
+      "time": "2026-11-23T14:47:18.769045",
+      "type": "BUY",
+      "ticker": "GDDY",
+      "price": 101.9,
+      "amount": 407.0
+    },
+    {
+      "time": "2026-11-23T17:27:04.154378",
+      "type": "SELL",
+      "ticker": "GDDY",
+      "price": 102.98,
+      "amount": 407.0
+    }
+  ]
+}
