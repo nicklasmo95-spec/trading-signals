@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T20:50:42+00:00",
+  "trades": [
+    {
+      "ts": "2026-11-24T14:35:17",
+      "symbol": "PM",
+      "side": "buy",
+      "qty": 20.0,
+      "price": 181.91,
+      "notional": 3638.2,
+      "reason": "RSI2 1.0",
+      "entry_date": "2026-11-24",
+      "entry_price": 181.91,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": "fe0d5a08-eb09-43fe-b3a2-acfd3cf19400"
+    },
+    {
+      "ts": "2026-11-24T14:35:50",
+      "symbol": "PM",
+      "side": "buy",
+      "qty": 6.5629,
+      "price": null,
+      "notional": null,
+      "reason": "afstemning: +6.56288 stk fra Alpaca (fx delvist fyld)",
+      "entry_date": "2026-11-24",
+      "entry_price": 181.9347,
+      "pnl_usd": null,
+      "ret_pct": null,
+      "days_held": null,
+      "ai_decision": "APPROVE",
+      "order_id": null
+    }
+  ]
+}
