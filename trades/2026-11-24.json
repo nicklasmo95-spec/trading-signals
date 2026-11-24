@@ -1,0 +1,230 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T21:05:52+00:00",
+  "trades": [
+    {
+      "time": "2026-11-24T14:30:46.129030",
+      "type": "SELL",
+      "ticker": "FAST",
+      "price": 52.05,
+      "amount": 694.0
+    },
+    {
+      "time": "2026-11-24T14:30:51.472578",
+      "type": "BUY",
+      "ticker": "PM",
+      "price": 182.52,
+      "amount": 228.0
+    },
+    {
+      "time": "2026-11-24T14:30:54.368861",
+      "type": "BUY",
+      "ticker": "MPC",
+      "price": 357.67,
+      "amount": 116.0
+    },
+    {
+      "time": "2026-11-24T14:30:57.380387",
+      "type": "BUY",
+      "ticker": "PSX",
+      "price": 237.2,
+      "amount": 175.0
+    },
+    {
+      "time": "2026-11-24T14:31:00.274041",
+      "type": "BUY",
+      "ticker": "TRGP",
+      "price": 277.37,
+      "amount": 150.0
+    },
+    {
+      "time": "2026-11-24T14:31:03.317234",
+      "type": "BUY",
+      "ticker": "VLO",
+      "price": 329.33,
+      "amount": 126.0
+    },
+    {
+      "time": "2026-11-24T14:31:06.904324",
+      "type": "BUY",
+      "ticker": "ROP",
+      "price": 458.13,
+      "amount": 90.0
+    },
+    {
+      "time": "2026-11-24T14:31:09.804795",
+      "type": "BUY",
+      "ticker": "COR",
+      "price": 337.94,
+      "amount": 123.0
+    },
+    {
+      "time": "2026-11-24T14:31:12.668924",
+      "type": "BUY",
+      "ticker": "CNC",
+      "price": 63.31,
+      "amount": 657.0
+    },
+    {
+      "time": "2026-11-24T14:31:15.607605",
+      "type": "BUY",
+      "ticker": "MO",
+      "price": 73.78,
+      "amount": 563.0
+    },
+    {
+      "time": "2026-11-24T14:31:18.772537",
+      "type": "BUY",
+      "ticker": "ELV",
+      "price": 379.55,
+      "amount": 109.0
+    },
+    {
+      "time": "2026-11-24T14:31:21.656731",
+      "type": "BUY",
+      "ticker": "CCI",
+      "price": 81.23,
+      "amount": 512.0
+    },
+    {
+      "time": "2026-11-24T14:31:24.874745",
+      "type": "BUY",
+      "ticker": "CAH",
+      "price": 271.96,
+      "amount": 152.0
+    },
+    {
+      "time": "2026-11-24T14:51:14.571685",
+      "type": "BUY",
+      "ticker": "BBY",
+      "price": 99.65,
+      "amount": 420.0
+    },
+    {
+      "time": "2026-11-24T14:52:19.014325",
+      "type": "SELL",
+      "ticker": "PFE",
+      "price": 27.74,
+      "amount": 1516.0
+    },
+    {
+      "time": "2026-11-24T14:52:25.183602",
+      "type": "SELL",
+      "ticker": "BBY",
+      "price": 100.44,
+      "amount": 420.0
+    },
+    {
+      "time": "2026-11-24T14:53:31.682672",
+      "type": "SELL",
+      "ticker": "ROP",
+      "price": 465.89,
+      "amount": 90.0
+    },
+    {
+      "time": "2026-11-24T14:53:37.745236",
+      "type": "BUY",
+      "ticker": "BBY",
+      "price": 100.63,
+      "amount": 416.0
+    },
+    {
+      "time": "2026-11-24T14:54:43.125010",
+      "type": "SELL",
+      "ticker": "BBY",
+      "price": 100.25,
+      "amount": 416.0
+    },
+    {
+      "time": "2026-11-24T14:56:59.009458",
+      "type": "BUY",
+      "ticker": "BBY",
+      "price": 100.3,
+      "amount": 418.0
+    },
+    {
+      "time": "2026-11-24T14:58:04.436448",
+      "type": "SELL",
+      "ticker": "BBY",
+      "price": 99.79,
+      "amount": 418.0
+    },
+    {
+      "time": "2026-11-24T14:59:14.816686",
+      "type": "BUY",
+      "ticker": "BBY",
+      "price": 98.97,
+      "amount": 423.0
+    },
+    {
+      "time": "2026-11-24T15:00:17.839684",
+      "type": "SELL",
+      "ticker": "CAH",
+      "price": 273.81,
+      "amount": 152.0
+    },
+    {
+      "time": "2026-11-24T15:00:21.589867",
+      "type": "SELL",
+      "ticker": "COR",
+      "price": 342.1,
+      "amount": 123.0
+    },
+    {
+      "time": "2026-11-24T15:00:26.701560",
+      "type": "SELL",
+      "ticker": "BBY",
+      "price": 98.68,
+      "amount": 423.0
+    },
+    {
+      "time": "2026-11-24T15:01:38.124627",
+      "type": "BUY",
+      "ticker": "BBY",
+      "price": 97.67,
+      "amount": 429.0
+    },
+    {
+      "time": "2026-11-24T15:04:52.152285",
+      "type": "SELL",
+      "ticker": "CCI",
+      "price": 82.5,
+      "amount": 512.0
+    },
+    {
+      "time": "2026-11-24T15:19:00.972908",
+      "type": "SELL",
+      "ticker": "CNC",
+      "price": 65.0,
+      "amount": 657.0
+    },
+    {
+      "time": "2026-11-24T15:20:08.436454",
+      "type": "SELL",
+      "ticker": "MO",
+      "price": 74.98,
+      "amount": 563.0
+    },
+    {
+      "time": "2026-11-24T15:21:17.391501",
+      "type": "SELL",
+      "ticker": "BBY",
+      "price": 98.9,
+      "amount": 429.0
+    },
+    {
+      "time": "2026-11-24T17:12:39.432155",
+      "type": "SELL",
+      "ticker": "PM",
+      "price": 186.33,
+      "amount": 228.0
+    },
+    {
+      "time": "2026-11-24T17:21:17.310793",
+      "type": "SELL",
+      "ticker": "ELV",
+      "price": 392.04,
+      "amount": 109.0
+    }
+  ]
+}
