@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-24T14:35:17+00:00",
+  "updated_at": "2026-11-24T20:50:40+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "køb",
+  "last_event": "exit-tjek",
   "account": {
-    "equity": 97038.62,
-    "cash": 7936.57,
-    "day_pl": 279.52,
-    "day_pl_pct": 0.29
+    "equity": 98689.98,
+    "cash": 6742.06,
+    "day_pl": 1930.88,
+    "day_pl_pct": 2.0
   },
   "max_positions": 20,
   "positions": [
@@ -22,9 +22,9 @@
       "stop": 97.15,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 102.71,
-      "upl_pct": -4.85
+      "protected": false,
+      "price": 105.46,
+      "upl_pct": -2.3
     },
     {
       "ticker": "ACN",
@@ -34,9 +34,9 @@
       "stop": 200.53,
       "days": 3,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 225.94,
-      "upl_pct": 1.4
+      "protected": false,
+      "price": 232.87,
+      "upl_pct": 4.52
     },
     {
       "ticker": "AMCR",
@@ -46,9 +46,9 @@
       "stop": 39.78,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 43.44,
-      "upl_pct": -1.72
+      "protected": false,
+      "price": 44.66,
+      "upl_pct": 1.04
     },
     {
       "ticker": "AMGN",
@@ -58,9 +58,9 @@
       "stop": 399.59,
       "days": 4,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 455.45,
-      "upl_pct": 2.58
+      "protected": false,
+      "price": 472.96,
+      "upl_pct": 6.52
     },
     {
       "ticker": "CTSH",
@@ -70,9 +70,9 @@
       "stop": 52.54,
       "days": 4,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 59.36,
-      "upl_pct": 1.68
+      "protected": false,
+      "price": 60.99,
+      "upl_pct": 4.47
     },
     {
       "ticker": "CVX",
@@ -82,9 +82,9 @@
       "stop": 202.44,
       "days": 12,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 206.73,
-      "upl_pct": -1.96
+      "protected": false,
+      "price": 209.53,
+      "upl_pct": -0.64
     },
     {
       "ticker": "D",
@@ -94,9 +94,9 @@
       "stop": 60.67,
       "days": 8,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 66.44,
-      "upl_pct": -1.45
+      "protected": false,
+      "price": 67.5,
+      "upl_pct": 0.13
     },
     {
       "ticker": "DOC",
@@ -106,9 +106,9 @@
       "stop": 17.58,
       "days": 3,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 19.86,
-      "upl_pct": 1.66
+      "protected": false,
+      "price": 20.4,
+      "upl_pct": 4.45
     },
     {
       "ticker": "ETR",
@@ -119,8 +119,8 @@
       "days": 5,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 106.46,
-      "upl_pct": -1.45
+      "price": 105.97,
+      "upl_pct": -1.9
     },
     {
       "ticker": "GPN",
@@ -130,9 +130,9 @@
       "stop": 80.23,
       "days": 8,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 91.75,
-      "upl_pct": 2.93
+      "protected": false,
+      "price": 94.25,
+      "upl_pct": 5.74
     },
     {
       "ticker": "IFF",
@@ -142,9 +142,9 @@
       "stop": 73.04,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 82.53,
-      "upl_pct": 1.7
+      "protected": false,
+      "price": 85.29,
+      "upl_pct": 5.1
     },
     {
       "ticker": "ILMN",
@@ -154,9 +154,9 @@
       "stop": 181.3,
       "days": 6,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 206.0,
-      "upl_pct": 2.26
+      "protected": false,
+      "price": 206.01,
+      "upl_pct": 2.27
     },
     {
       "ticker": "IQV",
@@ -166,9 +166,9 @@
       "stop": 238.28,
       "days": 7,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 255.31,
-      "upl_pct": -3.56
+      "protected": false,
+      "price": 252.34,
+      "upl_pct": -4.69
     },
     {
       "ticker": "OTIS",
@@ -178,9 +178,9 @@
       "stop": 69.91,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 77.21,
-      "upl_pct": -0.61
+      "protected": false,
+      "price": 78.29,
+      "upl_pct": 0.79
     },
     {
       "ticker": "PKG",
@@ -190,21 +190,21 @@
       "stop": 216.63,
       "days": 3,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 238.0,
-      "upl_pct": -1.12
+      "protected": false,
+      "price": 241.13,
+      "upl_pct": 0.18
     },
     {
       "ticker": "PM",
-      "qty": 20.0,
-      "entry_price": 181.91,
+      "qty": 26.562881,
+      "entry_price": 181.93,
       "entry_date": "2026-11-24",
-      "stop": 163.72,
+      "stop": 163.74,
       "days": 1,
       "ai_decision": "APPROVE",
-      "protected": false,
-      "price": 181.87,
-      "upl_pct": -0.02
+      "protected": true,
+      "price": 184.34,
+      "upl_pct": 1.32
     },
     {
       "ticker": "PSA",
@@ -214,9 +214,9 @@
       "stop": 301.31,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 327.88,
-      "upl_pct": -2.06
+      "protected": false,
+      "price": 332.15,
+      "upl_pct": -0.79
     },
     {
       "ticker": "VEEV",
@@ -226,9 +226,9 @@
       "stop": 237.09,
       "days": 3,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 269.7,
-      "upl_pct": 2.38
+      "protected": false,
+      "price": 273.51,
+      "upl_pct": 3.83
     },
     {
       "ticker": "VRTX",
@@ -238,9 +238,9 @@
       "stop": 491.72,
       "days": 7,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 551.09,
-      "upl_pct": 0.87
+      "protected": false,
+      "price": 563.5,
+      "upl_pct": 3.14
     },
     {
       "ticker": "ZBH",
@@ -250,9 +250,9 @@
       "stop": 91.66,
       "days": 7,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 106.3,
-      "upl_pct": 4.37
+      "protected": false,
+      "price": 109.34,
+      "upl_pct": 7.37
     }
   ],
   "rules": {
