@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T21:05:16+00:00",
+  "trades": [
+    {
+      "time": "2026-11-25T14:30:55.621336",
+      "type": "SELL",
+      "ticker": "TRGP",
+      "price": 283.12,
+      "amount": 150.0
+    },
+    {
+      "time": "2026-11-25T14:32:07.720410",
+      "type": "BUY",
+      "ticker": "MDT",
+      "price": 96.19,
+      "amount": 434.0
+    },
+    {
+      "time": "2026-11-25T14:32:11.642603",
+      "type": "BUY",
+      "ticker": "HAS",
+      "price": 112.23,
+      "amount": 372.0
+    },
+    {
+      "time": "2026-11-25T14:33:22.761531",
+      "type": "BUY",
+      "ticker": "SJM",
+      "price": 130.85,
+      "amount": 319.0
+    },
+    {
+      "time": "2026-11-25T14:53:01.828220",
+      "type": "SELL",
+      "ticker": "MPC",
+      "price": 342.91,
+      "amount": 103.0
+    },
+    {
+      "time": "2026-11-25T15:21:13.720294",
+      "type": "BUY",
+      "ticker": "WST",
+      "price": 378.04,
+      "amount": 110.0
+    },
+    {
+      "time": "2026-11-25T16:24:07.473537",
+      "type": "SELL",
+      "ticker": "SJM",
+      "price": 132.32,
+      "amount": 319.0
+    },
+    {
+      "time": "2026-11-25T16:36:01.353480",
+      "type": "SELL",
+      "ticker": "VLO",
+      "price": 315.22,
+      "amount": 111.0
+    }
+  ]
+}
