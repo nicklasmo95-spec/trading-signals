@@ -1,4 +1,4 @@
-# Night Desk – runbook (used by the scheduled Claude session)
+# Memecoin Desk – runbook (used by the scheduled Claude session)
 
 Dashboard: https://claude.ai/artifact/5kq5CkFPBGW8z5ESCjNJNd  (db doc `desk/state`, trigger id in `desk/config`)
 

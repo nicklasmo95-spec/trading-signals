@@ -1,4 +1,4 @@
-<title>Memecoin Night Desk</title>
+<title>Memecoin Desk 24/7</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -102,8 +102,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
   <header class="top">
     <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 16l5-5 4 3 7-8" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg></div>
     <div class="brand">
-      <h1>Night Desk</h1>
-      <p>Solana memes · strict risk · <span id="modeTxt">paper</span> → live</p>
+      <h1>Memecoin Desk</h1>
+      <p>Solana memes · strict risk · <span id="modeTxt">paper</span> → live · runs hourly 24/7</p>
     </div>
     <span id="demoPill" class="pill demo" hidden>Demo data</span>
     <span id="livePill" class="pill"><span class="dot"></span><span id="liveTxt">Waiting</span></span>
@@ -171,7 +171,7 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
     <div class="spec" id="spec"></div>
   </section>
 
-  <footer>Data: DexScreener · RugCheck · Birdeye (optional) · Jupiter quotes (optional). Paper trading. <span id="upd"></span></footer>
+  <footer>Data: DexScreener · RugCheck · Jupiter quotes for paper fills (price impact + fees). Birdeye not active (paid plan). Paper trading. <span id="upd"></span></footer>
 </div>
 
 <script>
@@ -199,7 +199,8 @@ function render(s){
   const age = (Date.now() - Date.parse(s.updated))/60000;
   const live = age < 5;
   $("livePill").classList.toggle("live", live);
-  $("liveTxt").textContent = live ? "Live" : "Idle · " + hm(s.updated);
+  const nx = new Date(); nx.setMinutes(2,0,0); if (nx <= new Date()) nx.setHours(nx.getHours()+1);
+  $("liveTxt").textContent = live ? "Live" : "Between runs · next " + hm(nx.toISOString());
   $("upd").textContent = "Updated " + new Date(s.updated).toLocaleString("da-DK",{timeZone:"Europe/Copenhagen"}) + ".";
 
   const st = s.start_equity||0, eq = s.equity||0, ch = eq-st, m = st? eq/st : 1;
