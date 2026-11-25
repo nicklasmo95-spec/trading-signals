@@ -95,11 +95,11 @@ def save_state(st: dict) -> None:
     now = time.time()
     keep = {}
     for m, v in st["seen"].items():
-        if v["verdict"] in HARD_RULES or v["verdict"] == "pass" or \
-                now - datetime.fromisoformat(v["t"].replace("Z", "+00:00")).timestamp() < RECHECK_MIN * 60:
-            keep[m] = {"t": v["t"], "verdict": v["verdict"]}
-    st["seen"] = dict(list(keep.items())[-1500:])
-    st["log"] = st["log"][-200:]
+        t, verdict = seen_entry(v)
+        if verdict in HARD_RULES or verdict == "pass" or now - t < RECHECK_MIN * 60:
+            keep[m] = [int(t), verdict]
+    st["seen"] = dict(list(keep.items())[-1200:])
+    st["log"] = st["log"][-120:]
     st["equity_curve"] = st["equity_curve"][-600:]
     STATE_FILE.write_text(json.dumps(st, separators=(",", ":")))
     snap = snapshot(st)
@@ -132,6 +132,13 @@ RULE_LABELS = {
     "pumped": "Already +80% in 1h",
     "age_mcap": "Outside age/mcap window",
 }
+
+
+def seen_entry(v) -> tuple[float, str]:
+    """(epoch_seconds, verdict) from a compact [t, verdict] entry or a legacy {"t": iso, "verdict"} dict."""
+    if isinstance(v, list):
+        return float(v[0]), v[1]
+    return datetime.fromisoformat(v["t"].replace("Z", "+00:00")).timestamp(), v["verdict"]
 
 
 HARD_RULES = {"mint_freeze", "lp", "top10", "dev", "bundled"}
@@ -296,10 +303,10 @@ def scout(st, mkt) -> dict[str, dict]:
         v = st["seen"].get(m)
         if not v:
             return False
-        if v["verdict"] in HARD_RULES or v["verdict"] == "pass":
+        t, verdict = seen_entry(v)
+        if verdict in HARD_RULES or verdict == "pass":
             return True
-        age_min = (time.time() - datetime.fromisoformat(v["t"].replace("Z", "+00:00")).timestamp()) / 60
-        return age_min < RECHECK_MIN
+        return (time.time() - t) / 60 < RECHECK_MIN
     mints = [m for m in mkt.new_solana_tokens() if not skip(m) and m not in st["positions"]]
     pairs = mkt.pairs(mints) if mints else {}
     st["counters"]["scanned"] += sum(1 for m in pairs if m not in st["seen"])
@@ -370,7 +377,7 @@ def filt(st, mkt, pairs: dict[str, dict]) -> list[dict]:
                 rule, reason = "bundled", f"bundled launch {rm['insider']:.0f}%"
 
         recheck = mint in st["seen"]
-        st["seen"][mint] = {"t": now_iso(), "verdict": rule or "pass"}
+        st["seen"][mint] = [int(time.time()), rule or "pass"]
         if rule:
             if recheck and rule in ("age_mcap", "liq_vol", "pumped"):
                 continue          # still not ready: silent, already counted once
