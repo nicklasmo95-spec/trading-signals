@@ -161,7 +161,7 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
           <button id="runBtn" type="button">Run desk now</button>
         </div>
         <div id="claudeOut" aria-live="polite"></div>
-        <p class="note" id="ctlNote">The desk runs every hour, around the clock, as a scheduled Claude session and pushes its state here.</p>
+        <p class="note" id="ctlNote">The desk runs every hour, around the clock, as a scheduled Claude session. This page refreshes about every 9 minutes while a run is active.</p>
       </section>
     </div>
   </div>
@@ -197,7 +197,7 @@ function render(s){
   $("demoPill").hidden = s.source !== "demo";
   $("modeTxt").textContent = s.mode || "paper";
   const age = (Date.now() - Date.parse(s.updated))/60000;
-  const live = age < 5;
+  const live = age < 12;
   $("livePill").classList.toggle("live", live);
   const nx = new Date(); nx.setMinutes(2,0,0); if (nx <= new Date()) nx.setHours(nx.getHours()+1);
   $("liveTxt").textContent = live ? "Live" : "Between runs · next " + hm(nx.toISOString());
