@@ -92,7 +92,13 @@ def load_state() -> dict:
 def save_state(st: dict) -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     # compact dedupe memory so the whole engine state fits in one dashboard db document (~200 KB)
-    st["seen"] = {m: {"t": v["t"], "verdict": v["verdict"]} for m, v in list(st["seen"].items())[-3000:]}
+    now = time.time()
+    keep = {}
+    for m, v in st["seen"].items():
+        if v["verdict"] in HARD_RULES or v["verdict"] == "pass" or \
+                now - datetime.fromisoformat(v["t"].replace("Z", "+00:00")).timestamp() < RECHECK_MIN * 60:
+            keep[m] = {"t": v["t"], "verdict": v["verdict"]}
+    st["seen"] = dict(list(keep.items())[-1500:])
     st["log"] = st["log"][-200:]
     st["equity_curve"] = st["equity_curve"][-600:]
     STATE_FILE.write_text(json.dumps(st, separators=(",", ":")))
@@ -296,7 +302,7 @@ def scout(st, mkt) -> dict[str, dict]:
         return age_min < RECHECK_MIN
     mints = [m for m in mkt.new_solana_tokens() if not skip(m) and m not in st["positions"]]
     pairs = mkt.pairs(mints) if mints else {}
-    st["counters"]["scanned"] += len(pairs)
+    st["counters"]["scanned"] += sum(1 for m in pairs if m not in st["seen"])
     if pairs:
         sym = next(iter(pairs.values()))["baseToken"].get("symbol", "?")
         st["agents"]["scout"] = f"${sym} new pair · {len(pairs)} this cycle"
@@ -363,9 +369,11 @@ def filt(st, mkt, pairs: dict[str, dict]) -> list[dict]:
             elif rm["insider"] > r["max_bundled_pct"]:
                 rule, reason = "bundled", f"bundled launch {rm['insider']:.0f}%"
 
-        st["seen"][mint] = {"t": now_iso(), "sym": sym, "verdict": rule or "pass",
-                            "holders": [cand.get("rug", {}).get("holders", 0)]}
+        recheck = mint in st["seen"]
+        st["seen"][mint] = {"t": now_iso(), "verdict": rule or "pass"}
         if rule:
+            if recheck and rule in ("age_mcap", "liq_vol", "pumped"):
+                continue          # still not ready: silent, already counted once
             st["counters"]["killed"] += 1
             st["kills_by_rule"][rule] += 1
             log(st, "filter", f"killed · {reason}", sym, "kill")
