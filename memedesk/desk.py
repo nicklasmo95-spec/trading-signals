@@ -111,6 +111,10 @@ RULE_LABELS = {
 }
 
 
+HARD_RULES = {"mint_freeze", "lp", "top10", "dev", "bundled"}
+RECHECK_MIN = 60
+
+
 def log(st: dict, agent: str, msg: str, sym: str = "", kind: str = "info") -> None:
     st["log"].append({"t": now_iso(), "agent": agent, "msg": msg, "sym": sym, "kind": kind})
     st["agents"][agent] = (f"${sym} " if sym else "") + msg
@@ -135,6 +139,16 @@ class Market:
             for t in data if isinstance(data, list) else []:
                 if t.get("chainId") == "solana" and t.get("tokenAddress"):
                     mints.append(t["tokenAddress"])
+        # GeckoTerminal: pools trending in the last 1h/6h + newest pools (free, no key, ~30 req/min)
+        gt = "https://api.geckoterminal.com/api/v2/networks/solana"
+        for path in ("trending_pools?duration=1h&page=1", "trending_pools?duration=1h&page=2",
+                     "trending_pools?duration=6h&page=1", "trending_pools?duration=6h&page=2",
+                     "new_pools?page=1", "new_pools?page=2", "new_pools?page=3"):
+            data = http_json(f"{gt}/{path}") or {}
+            for pool in data.get("data") or []:
+                tid = (((pool.get("relationships") or {}).get("base_token") or {}).get("data") or {}).get("id", "")
+                if tid.startswith("solana_"):
+                    mints.append(tid[7:])
         # Pump.fun graduations / Raydium & PumpSwap fresh pairs via search
         for q in ("pump", "raydium", "pumpswap"):
             data = http_json(f"{self.DS}/latest/dex/search?q={q}") or {}
@@ -255,7 +269,15 @@ class DemoMarket(Market):
 
 # ---------------------------------------------------------------- agents
 def scout(st, mkt) -> dict[str, dict]:
-    mints = [m for m in mkt.new_solana_tokens() if m not in st["seen"]]
+    def skip(m):  # hard rug flags are permanent; soft kills (age/liq/vol/pump) get re-checked after RECHECK_MIN
+        v = st["seen"].get(m)
+        if not v:
+            return False
+        if v["verdict"] in HARD_RULES or v["verdict"] == "pass":
+            return True
+        age_min = (time.time() - datetime.fromisoformat(v["t"].replace("Z", "+00:00")).timestamp()) / 60
+        return age_min < RECHECK_MIN
+    mints = [m for m in mkt.new_solana_tokens() if not skip(m) and m not in st["positions"]]
     pairs = mkt.pairs(mints) if mints else {}
     st["counters"]["scanned"] += len(pairs)
     if pairs:
