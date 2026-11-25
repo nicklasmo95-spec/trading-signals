@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-25T14:32:22+00:00",
+  "updated_at": "2026-11-25T20:50:59+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "køb",
+  "last_event": "exit-tjek",
   "account": {
-    "equity": 98240.4,
+    "equity": 99843.18,
     "cash": 6742.05,
-    "day_pl": -355.36,
-    "day_pl_pct": -0.36
+    "day_pl": 1247.42,
+    "day_pl_pct": 1.27
   },
   "max_positions": 20,
   "positions": [
@@ -22,9 +22,9 @@
       "stop": 97.15,
       "days": 9,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 106.1,
-      "upl_pct": -1.71
+      "protected": false,
+      "price": 108.31,
+      "upl_pct": 0.34
     },
     {
       "ticker": "ACN",
@@ -34,9 +34,9 @@
       "stop": 200.53,
       "days": 4,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 236.01,
-      "upl_pct": 5.92
+      "protected": false,
+      "price": 242.09,
+      "upl_pct": 8.65
     },
     {
       "ticker": "AMCR",
@@ -46,9 +46,9 @@
       "stop": 39.78,
       "days": 9,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 44.7,
-      "upl_pct": 1.13
+      "protected": false,
+      "price": 45.63,
+      "upl_pct": 3.25
     },
     {
       "ticker": "AMGN",
@@ -58,9 +58,9 @@
       "stop": 399.59,
       "days": 5,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 470.43,
-      "upl_pct": 5.96
+      "protected": false,
+      "price": 470.67,
+      "upl_pct": 6.01
     },
     {
       "ticker": "CTSH",
@@ -70,9 +70,9 @@
       "stop": 52.54,
       "days": 5,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 62.13,
-      "upl_pct": 6.42
+      "protected": false,
+      "price": 63.73,
+      "upl_pct": 9.16
     },
     {
       "ticker": "CVX",
@@ -82,9 +82,9 @@
       "stop": 202.44,
       "days": 13,
       "ai_decision": "OFF",
-      "protected": true,
-      "price": 208.42,
-      "upl_pct": -1.16
+      "protected": false,
+      "price": 211.59,
+      "upl_pct": 0.34
     },
     {
       "ticker": "D",
@@ -94,9 +94,9 @@
       "stop": 60.67,
       "days": 9,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 67.44,
-      "upl_pct": 0.04
+      "protected": false,
+      "price": 68.2,
+      "upl_pct": 1.17
     },
     {
       "ticker": "DOC",
@@ -106,9 +106,9 @@
       "stop": 17.58,
       "days": 4,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 20.38,
-      "upl_pct": 4.35
+      "protected": false,
+      "price": 20.75,
+      "upl_pct": 6.25
     },
     {
       "ticker": "ETR",
@@ -118,9 +118,9 @@
       "stop": 97.22,
       "days": 6,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 105.48,
-      "upl_pct": -2.35
+      "protected": false,
+      "price": 107.53,
+      "upl_pct": -0.46
     },
     {
       "ticker": "GPN",
@@ -130,9 +130,9 @@
       "stop": 80.23,
       "days": 9,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 94.16,
-      "upl_pct": 5.63
+      "protected": false,
+      "price": 96.54,
+      "upl_pct": 8.3
     },
     {
       "ticker": "IFF",
@@ -142,9 +142,9 @@
       "stop": 73.04,
       "days": 9,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 84.94,
-      "upl_pct": 4.68
+      "protected": false,
+      "price": 86.4,
+      "upl_pct": 6.47
     },
     {
       "ticker": "ILMN",
@@ -155,8 +155,8 @@
       "days": 7,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 194.32,
-      "upl_pct": -3.54
+      "price": 199.97,
+      "upl_pct": -0.73
     },
     {
       "ticker": "IQV",
@@ -166,9 +166,9 @@
       "stop": 238.28,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 244.85,
-      "upl_pct": -7.52
+      "protected": false,
+      "price": 251.21,
+      "upl_pct": -5.11
     },
     {
       "ticker": "OTIS",
@@ -178,9 +178,9 @@
       "stop": 69.91,
       "days": 9,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 78.33,
-      "upl_pct": 0.84
+      "protected": false,
+      "price": 79.16,
+      "upl_pct": 1.91
     },
     {
       "ticker": "PKG",
@@ -190,9 +190,9 @@
       "stop": 216.63,
       "days": 4,
       "ai_decision": "VETO",
-      "protected": true,
-      "price": 241.09,
-      "upl_pct": 0.16
+      "protected": false,
+      "price": 246.51,
+      "upl_pct": 2.41
     },
     {
       "ticker": "PM",
@@ -202,9 +202,9 @@
       "stop": 163.74,
       "days": 2,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 184.5,
-      "upl_pct": 1.41
+      "protected": false,
+      "price": 184.47,
+      "upl_pct": 1.39
     },
     {
       "ticker": "PSA",
@@ -214,9 +214,9 @@
       "stop": 301.31,
       "days": 9,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 334.14,
-      "upl_pct": -0.19
+      "protected": false,
+      "price": 338.51,
+      "upl_pct": 1.11
     },
     {
       "ticker": "VEEV",
@@ -226,9 +226,9 @@
       "stop": 237.09,
       "days": 4,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 271.09,
-      "upl_pct": 2.91
+      "protected": false,
+      "price": 272.43,
+      "upl_pct": 3.42
     },
     {
       "ticker": "VRTX",
@@ -238,9 +238,9 @@
       "stop": 491.72,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 564.22,
-      "upl_pct": 3.27
+      "protected": false,
+      "price": 565.36,
+      "upl_pct": 3.48
     },
     {
       "ticker": "ZBH",
@@ -250,9 +250,9 @@
       "stop": 91.66,
       "days": 8,
       "ai_decision": "APPROVE",
-      "protected": true,
-      "price": 108.84,
-      "upl_pct": 6.88
+      "protected": false,
+      "price": 110.2,
+      "upl_pct": 8.21
     }
   ],
   "rules": {
