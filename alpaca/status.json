@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-24T20:50:40+00:00",
+  "updated_at": "2026-11-25T12:01:11+00:00",
   "ok": true,
   "broker": "alpaca",
   "mode": "PAPER",
   "ai_mode": "shadow",
   "halted": false,
-  "last_event": "exit-tjek",
+  "last_event": "scan",
   "account": {
-    "equity": 98689.98,
-    "cash": 6742.06,
-    "day_pl": 1930.88,
-    "day_pl_pct": 2.0
+    "equity": 98490.52,
+    "cash": 6742.05,
+    "day_pl": -105.24,
+    "day_pl_pct": -0.11
   },
   "max_positions": 20,
   "positions": [
@@ -20,11 +20,11 @@
       "entry_price": 107.94,
       "entry_date": "2026-11-13",
       "stop": 97.15,
-      "days": 8,
+      "days": 9,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 105.46,
-      "upl_pct": -2.3
+      "price": 105.4,
+      "upl_pct": -2.35
     },
     {
       "ticker": "ACN",
@@ -32,11 +32,11 @@
       "entry_price": 222.81,
       "entry_date": "2026-11-20",
       "stop": 200.53,
-      "days": 3,
+      "days": 4,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 232.87,
-      "upl_pct": 4.52
+      "price": 232.23,
+      "upl_pct": 4.23
     },
     {
       "ticker": "AMCR",
@@ -44,11 +44,11 @@
       "entry_price": 44.2,
       "entry_date": "2026-11-13",
       "stop": 39.78,
-      "days": 8,
+      "days": 9,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 44.66,
-      "upl_pct": 1.04
+      "price": 44.7,
+      "upl_pct": 1.13
     },
     {
       "ticker": "AMGN",
@@ -56,11 +56,11 @@
       "entry_price": 443.99,
       "entry_date": "2026-11-19",
       "stop": 399.59,
-      "days": 4,
+      "days": 5,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 472.96,
-      "upl_pct": 6.52
+      "price": 473.68,
+      "upl_pct": 6.69
     },
     {
       "ticker": "CTSH",
@@ -68,11 +68,11 @@
       "entry_price": 58.38,
       "entry_date": "2026-11-19",
       "stop": 52.54,
-      "days": 4,
+      "days": 5,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 60.99,
-      "upl_pct": 4.47
+      "price": 61.02,
+      "upl_pct": 4.52
     },
     {
       "ticker": "CVX",
@@ -80,11 +80,11 @@
       "entry_price": 210.87,
       "entry_date": "2026-11-09",
       "stop": 202.44,
-      "days": 12,
+      "days": 13,
       "ai_decision": "OFF",
       "protected": false,
-      "price": 209.53,
-      "upl_pct": -0.64
+      "price": 208.74,
+      "upl_pct": -1.01
     },
     {
       "ticker": "D",
@@ -92,11 +92,11 @@
       "entry_price": 67.41,
       "entry_date": "2026-11-13",
       "stop": 60.67,
-      "days": 8,
+      "days": 9,
       "ai_decision": "VETO",
       "protected": false,
-      "price": 67.5,
-      "upl_pct": 0.13
+      "price": 67.32,
+      "upl_pct": -0.13
     },
     {
       "ticker": "DOC",
@@ -104,11 +104,11 @@
       "entry_price": 19.53,
       "entry_date": "2026-11-20",
       "stop": 17.58,
-      "days": 3,
+      "days": 4,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 20.4,
-      "upl_pct": 4.45
+      "price": 20.38,
+      "upl_pct": 4.35
     },
     {
       "ticker": "ETR",
@@ -116,11 +116,11 @@
       "entry_price": 108.02,
       "entry_date": "2026-11-18",
       "stop": 97.22,
-      "days": 5,
+      "days": 6,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 105.97,
-      "upl_pct": -1.9
+      "price": 105.96,
+      "upl_pct": -1.91
     },
     {
       "ticker": "GPN",
@@ -128,11 +128,11 @@
       "entry_price": 89.14,
       "entry_date": "2026-11-13",
       "stop": 80.23,
-      "days": 8,
+      "days": 9,
       "ai_decision": "VETO",
       "protected": false,
-      "price": 94.25,
-      "upl_pct": 5.74
+      "price": 94.22,
+      "upl_pct": 5.7
     },
     {
       "ticker": "IFF",
@@ -140,11 +140,11 @@
       "entry_price": 81.15,
       "entry_date": "2026-11-13",
       "stop": 73.04,
-      "days": 8,
+      "days": 9,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 85.29,
-      "upl_pct": 5.1
+      "price": 85.32,
+      "upl_pct": 5.14
     },
     {
       "ticker": "ILMN",
@@ -152,11 +152,11 @@
       "entry_price": 201.44,
       "entry_date": "2026-11-17",
       "stop": 181.3,
-      "days": 6,
+      "days": 7,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 206.01,
-      "upl_pct": 2.27
+      "price": 204.69,
+      "upl_pct": 1.61
     },
     {
       "ticker": "IQV",
@@ -164,11 +164,11 @@
       "entry_price": 264.75,
       "entry_date": "2026-11-16",
       "stop": 238.28,
-      "days": 7,
+      "days": 8,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 252.34,
-      "upl_pct": -4.69
+      "price": 251.98,
+      "upl_pct": -4.82
     },
     {
       "ticker": "OTIS",
@@ -176,11 +176,11 @@
       "entry_price": 77.68,
       "entry_date": "2026-11-13",
       "stop": 69.91,
-      "days": 8,
+      "days": 9,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 78.29,
-      "upl_pct": 0.79
+      "price": 78.33,
+      "upl_pct": 0.84
     },
     {
       "ticker": "PKG",
@@ -188,11 +188,11 @@
       "entry_price": 240.7,
       "entry_date": "2026-11-20",
       "stop": 216.63,
-      "days": 3,
+      "days": 4,
       "ai_decision": "VETO",
       "protected": false,
-      "price": 241.13,
-      "upl_pct": 0.18
+      "price": 241.09,
+      "upl_pct": 0.16
     },
     {
       "ticker": "PM",
@@ -200,11 +200,11 @@
       "entry_price": 181.93,
       "entry_date": "2026-11-24",
       "stop": 163.74,
-      "days": 1,
+      "days": 2,
       "ai_decision": "APPROVE",
       "protected": true,
-      "price": 184.34,
-      "upl_pct": 1.32
+      "price": 183.99,
+      "upl_pct": 1.13
     },
     {
       "ticker": "PSA",
@@ -212,11 +212,11 @@
       "entry_price": 334.79,
       "entry_date": "2026-11-13",
       "stop": 301.31,
-      "days": 8,
+      "days": 9,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 332.15,
-      "upl_pct": -0.79
+      "price": 331.79,
+      "upl_pct": -0.9
     },
     {
       "ticker": "VEEV",
@@ -224,11 +224,11 @@
       "entry_price": 263.43,
       "entry_date": "2026-11-20",
       "stop": 237.09,
-      "days": 3,
+      "days": 4,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 273.51,
-      "upl_pct": 3.83
+      "price": 273.46,
+      "upl_pct": 3.81
     },
     {
       "ticker": "VRTX",
@@ -236,11 +236,11 @@
       "entry_price": 546.35,
       "entry_date": "2026-11-16",
       "stop": 491.72,
-      "days": 7,
+      "days": 8,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 563.5,
-      "upl_pct": 3.14
+      "price": 564.04,
+      "upl_pct": 3.24
     },
     {
       "ticker": "ZBH",
@@ -248,11 +248,11 @@
       "entry_price": 101.84,
       "entry_date": "2026-11-16",
       "stop": 91.66,
-      "days": 7,
+      "days": 8,
       "ai_decision": "APPROVE",
       "protected": false,
-      "price": 109.34,
-      "upl_pct": 7.37
+      "price": 108.97,
+      "upl_pct": 7.0
     }
   ],
   "rules": {
