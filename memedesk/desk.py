@@ -91,11 +91,28 @@ def load_state() -> dict:
 
 def save_state(st: dict) -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
-    st["seen"] = dict(list(st["seen"].items())[-5000:])
-    st["log"] = st["log"][-400:]
+    # compact dedupe memory so the whole engine state fits in one dashboard db document (~200 KB)
+    st["seen"] = {m: {"t": v["t"], "verdict": v["verdict"]} for m, v in list(st["seen"].items())[-3000:]}
+    st["log"] = st["log"][-200:]
     st["equity_curve"] = st["equity_curve"][-600:]
-    STATE_FILE.write_text(json.dumps(st, indent=1))
-    SNAPSHOT_FILE.write_text(json.dumps(snapshot(st), separators=(",", ":")))
+    STATE_FILE.write_text(json.dumps(st, separators=(",", ":")))
+    snap = snapshot(st)
+    snap["engine"] = st   # full state travels with the dashboard doc; the next session imports it
+    SNAPSHOT_FILE.write_text(json.dumps(snap, separators=(",", ":")))
+
+
+def import_state(path: str) -> bool:
+    """Load engine state from a dashboard db dump (desk/state). Returns False if it holds none."""
+    try:
+        doc = json.loads(Path(path).read_text())
+    except (OSError, ValueError):
+        return False
+    eng = doc.get("engine") if isinstance(doc, dict) else None
+    if not isinstance(eng, dict) or "cash" not in eng:
+        return False
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
+    STATE_FILE.write_text(json.dumps(eng, separators=(",", ":")))
+    return True
 
 
 AGENTS = ["scout", "filter", "analyst", "executor", "risk", "logger"]
@@ -496,7 +513,10 @@ def main() -> int:
     ap.add_argument("--once", action="store_true")
     ap.add_argument("--demo", action="store_true", help="offline simulated market")
     ap.add_argument("--reset", action="store_true", help="wipe state and start from start_equity")
+    ap.add_argument("--import", dest="imp", help="load engine state from a dashboard db dump of desk/state")
     a = ap.parse_args()
+    if a.imp:
+        print("imported state from dashboard" if import_state(a.imp) else "no engine state in dump; using repo state", flush=True)
 
     if CONFIG["mode"] != "paper":
         print("Live mode is not enabled in this build. Set mode=paper.", file=sys.stderr)
