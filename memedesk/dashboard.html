@@ -161,7 +161,7 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
           <button id="runBtn" type="button">Run desk now</button>
         </div>
         <div id="claudeOut" aria-live="polite"></div>
-        <p class="note" id="ctlNote">The desk runs every hour from 23:00 to 08:00 (Copenhagen) as a scheduled Claude session and pushes its state here.</p>
+        <p class="note" id="ctlNote">The desk runs every hour, around the clock, as a scheduled Claude session and pushes its state here.</p>
       </section>
     </div>
   </div>
@@ -269,10 +269,10 @@ function spark(curve, start){
 function setNote(t){ $("ctlNote").textContent = t; }
 
 (async () => {
-  const timer = setTimeout(()=>{ if(!S) setNote("No desk state yet. The first scheduled run pushes it here at 23:00."); }, 10000);
+  const timer = setTimeout(()=>{ if(!S) setNote("No desk state yet. The next hourly run pushes it here."); }, 10000);
   const db = await claude.use("db");
   if (db){
-    db.doc("desk/state").onSnapshot(snap => { clearTimeout(timer); if (snap.exists) render(snap.data()); else setNote("No desk state yet. The first scheduled run pushes it here at 23:00."); },
+    db.doc("desk/state").onSnapshot(snap => { clearTimeout(timer); if (snap.exists) render(snap.data()); else setNote("No desk state yet. The next hourly run pushes it here."); },
       () => { clearTimeout(timer); setNote("Could not read the desk state. Reopen the page to try again."); });
     db.doc("desk/config").onSnapshot(snap => { triggerId = snap.exists ? snap.data().trigger_id : null; $("runBtn").disabled = !triggerId; }, ()=>{});
   } else { clearTimeout(timer); setNote("Sign in to claude.ai to see the live desk."); }
