@@ -4,8 +4,9 @@ Dashboard: https://claude.ai/artifact/5kq5CkFPBGW8z5ESCjNJNd  (db doc `desk/stat
 
 Each hourly run (every hour, 24/7, at :02):
 1. `git fetch origin claude/relaxed-fermat-rvzszo && git checkout claude/relaxed-fermat-rvzszo && git pull --ff-only`
-2. Five foreground blocks: `python3 memedesk/desk.py --minutes 9` (no background run, so the session stays active)
-3. `git add memedesk/state && git commit -m "Night desk: run $(date -u +%H:%M)" && git push -u origin claude/relaxed-fermat-rvzszo`
+2. Five foreground blocks: `python3 memedesk/desk.py --minutes 9` (no background run, so the session stays active).
+   After EACH block push `memedesk/state/snapshot.json` to the dashboard (step 4), so it refreshes every ~9 minutes.
+3. After the last block: `git add memedesk/state && git commit -m "Night desk: run $(date -u +%H:%M)" && git push -u origin claude/relaxed-fermat-rvzszo`
 4. ArtifactData `get` collection `desk`, doc_id `state` → take `version`; then `set` with `file_path`
    `memedesk/state/snapshot.json` and `if_version` = that version (no version if the doc does not exist).
 
