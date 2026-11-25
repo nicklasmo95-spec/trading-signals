@@ -12,5 +12,6 @@ Each hourly run (23:00–07:00 Europe/Copenhagen):
 Reset (wipe paper account): `python3 memedesk/desk.py --reset --once`
 Offline test: `python3 memedesk/desk.py --demo --minutes 1 --reset` (writes demo state; delete memedesk/state after).
 
-Optional keys (environment network secrets / env vars): BIRDEYE_API_KEY, JUPITER_API_KEY, RUGCHECK_API_KEY.
+Jupiter key: saved as a network secret for api.jup.ag on the "trading-signals" environment (proxy injects it).
+Optional keys (env vars): BIRDEYE_API_KEY (paid plan), RUGCHECK_API_KEY.
 Live trading is disabled in code (`mode` must be `paper`).

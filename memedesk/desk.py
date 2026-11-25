@@ -174,21 +174,17 @@ class Market:
     def quote_fill(self, mint: str, usd: float, price: float, side: str) -> float:
         """Paper fill price. Uses Jupiter quote when a key is present, else price +/- slippage."""
         slip = CONFIG["paper_slippage_pct"] / 100
-        key = os.getenv("JUPITER_API_KEY")
-        if key:
-            amount = int(usd * 1e6)  # USDC has 6 decimals
-            if side == "buy":
-                q = http_json(f"https://api.jup.ag/swap/v1/quote?inputMint={USDC_MINT}&outputMint={mint}"
-                              f"&amount={amount}&slippageBps=300", {"x-api-key": key})
-                if q and f(q.get("outAmount")) > 0:
-                    dec = int(q.get("outputDecimals") or 6)
-                    tokens = f(q["outAmount"]) / 10 ** dec
-                    if tokens > 0:
-                        return usd / tokens
+        key = os.getenv("JUPITER_API_KEY", "proxy-injected")  # real key is injected by the environment proxy
+        if key and price > 0:
+            # Real route quote for this USD size; price impact + 0.3% AMM fees replace the fixed slippage.
+            q = http_json(f"https://api.jup.ag/swap/v1/quote?inputMint={USDC_MINT}&outputMint={mint}"
+                          f"&amount={int(usd * 1e6)}&slippageBps=300", {"x-api-key": key})
+            if q and q.get("outAmount"):
+                slip = abs(f(q.get("priceImpactPct"))) + 0.003
         return price * (1 + slip) if side == "buy" else price * (1 - slip)
 
 
-USDC_MINT = "EPjFWvd5AvfqvVhXwg8M5bLs6dmq1JvXp1gQAaZ16xL"
+USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 
 
 class DemoMarket(Market):
