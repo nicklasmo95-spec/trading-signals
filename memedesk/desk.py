@@ -475,6 +475,9 @@ def executor(st, mkt, picks: list[dict]) -> None:
             "partial": False, "realized": 0.0, "liq0": c["liq"], "liq": c["liq"],
             "top10_0": (c.get("rug") or {}).get("top10"), "holder_checked": time.time(),
             "opened": now_iso(), "score": c["score"], "url": c["pair"].get("url", ""),
+            # entry features, kept on the closed trade for the 40-trade review of Filter and Analyst
+            "parts": c.get("parts", {}), "age_h": round(c["age_h"], 1), "mcap0": round(c["mcap"]),
+            "chg1h0": round(c["chg1h"], 1), "vol1h0": round(c["vol1h"]),
         }
         st["counters"]["traded"] += 1
         log(st, "executor", f"bought · ${usd:.2f} · {pct}% of stack{' (young coin)' if young else ''} · score {c['score']}", c["sym"], "buy")
