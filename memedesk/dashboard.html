@@ -60,13 +60,48 @@ h2{font-size:17px;font-weight:600}
 .eq-sub{display:flex;justify-content:space-between;margin-top:4px;font-size:13.5px}
 #spark{width:100%;height:64px;display:block;margin-top:10px}
 .agents{display:grid;gap:2px}
-.agent{display:grid;grid-template-columns:34px 92px 1fr auto;gap:10px;align-items:center;padding:8px 4px;border-radius:10px}
+.agent{display:grid;grid-template-columns:34px 92px 1fr auto 14px;gap:10px;align-items:center;padding:8px 4px;border-radius:10px;
+  width:100%;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.agent:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)!important}
+.agent .go{color:var(--muted);font-size:16px;line-height:1}
 .agent:nth-child(odd){background:color-mix(in srgb,var(--bg) 55%,transparent)}
 .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;font-family:var(--mono);font-size:13px;font-weight:500}
 .an{font-weight:600;line-height:1.15} .an span{display:block;font-weight:400;font-size:11px;color:var(--muted)}
 .aact{font-size:12.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .chip{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:999px;white-space:nowrap}
-@media (max-width:460px){.agent{grid-template-columns:30px 1fr auto}.aact{grid-column:2/4;grid-row:2}}
+@media (max-width:460px){.agent{grid-template-columns:30px 1fr auto 12px}.aact{grid-column:2/5;grid-row:2}}
+/* agent detail sheet */
+.sheet-bg{position:fixed;inset:0;background:color-mix(in srgb,#000 45%,transparent);z-index:20;display:flex;justify-content:flex-end}
+.sheet{background:var(--bg);width:min(560px,100%);height:100%;overflow-y:auto;
+  padding-block:calc(env(safe-area-inset-top,0px) + 16px) calc(env(safe-area-inset-bottom,0px) + 32px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:14px;align-content:start;box-shadow:-8px 0 30px color-mix(in srgb,#000 25%,transparent)}
+.sh-top{display:flex;align-items:center;gap:12px}
+.sh-top .ic{width:40px;height:40px;font-size:16px;border-radius:11px}
+.sh-top h2{font-size:22px}
+.sh-top p{margin:0;font-size:12.5px;color:var(--muted)}
+.sh-close{margin-left:auto;padding:7px 12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:var(--surface)}
+.tile b{display:block;font-family:var(--mono);font-weight:500;font-size:17px}
+.tile span{font-size:11.5px;color:var(--muted)}
+.does{margin:0;padding-left:18px;display:grid;gap:5px;font-size:13.5px;max-width:62ch}
+.h3{font:600 13px var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:2px 0 8px}
+.rows{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:12.5px;padding:7px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .sub{grid-column:1/3;color:var(--muted);font-size:11.5px}
+.pill{font-family:var(--mono);font-size:11.5px;padding:2px 7px;border-radius:999px;font-weight:500}
+.pill.ok{color:var(--accent);background:var(--accent-soft)} .pill.no{color:var(--kill);background:var(--kill-soft)}
+.parts{grid-column:1/3;display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:4px 10px}
+.part{font-size:10.5px;color:var(--muted)} .part .bar{height:4px} .part .bar i{background:var(--a-analyst)}
+.bars{display:flex;align-items:flex-end;gap:2px;height:56px}
+.bars i{flex:1;background:var(--a-scout);border-radius:2px 2px 0 0;min-height:2px;opacity:.85}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chips button{padding:5px 10px;font-size:12px;border-radius:999px}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.feed{display:grid;gap:5px;font-family:var(--mono);font-size:12px}
+.feed div{display:grid;grid-template-columns:44px 1fr;gap:8px}
 .log{display:grid;gap:4px;max-height:340px;overflow:auto;font-family:var(--mono);font-size:12px}
 .log div{display:grid;grid-template-columns:44px 1fr;gap:8px}
 .log .ag{font-weight:500}
@@ -171,6 +206,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
     <div class="spec" id="spec"></div>
   </section>
 
+  <div class="sheet-bg" id="sheetBg" hidden><aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shName"></aside></div>
+
   <footer>Data: DexScreener · RugCheck · Jupiter quotes for paper fills (price impact + fees). Birdeye not active (paid plan). Paper trading. <span id="upd"></span></footer>
 </div>
 
@@ -220,9 +257,10 @@ function render(s){
     analyst:[`${ct.scored||0} scored`,"--a-analyst"], executor:[`size ≤ ${ex.max_pct_per_trade??8}%`,"--a-exec"],
     risk:[`${rk.stop_pct??-10}% · ½ at +${rk.trail_activate_pct??12}%`,"--a-risk"], logger:[`${k(ct.reasons)} reasons`,"--a-logger"]
   };
-  $("agents").innerHTML = AG.map(a=>`<div class="agent"><div class="ic" style="background:var(${a.c})">${a.i}</div>
+  $("agents").innerHTML = AG.map(a=>`<button type="button" class="agent" data-agent="${a.k}" aria-label="Open ${a.n}"><div class="ic" style="background:var(${a.c})">${a.i}</div>
     <div class="an">${a.n}<span>${a.s}</span></div><div class="aact">${esc((s.agents||{})[a.k]||"—")}</div>
-    <span class="chip" style="color:var(${chips[a.k][1]});background:color-mix(in srgb,var(${chips[a.k][1]}) 13%,transparent)">${esc(chips[a.k][0])}</span></div>`).join("");
+    <span class="chip" style="color:var(${chips[a.k][1]});background:color-mix(in srgb,var(${chips[a.k][1]}) 13%,transparent)">${esc(chips[a.k][0])}</span><span class="go" aria-hidden="true">›</span></button>`).join("");
+  if (openAgent) renderSheet(openAgent);
 
   const tk = (s.watch||[]).map(t=>`<span class="tk"><b>${esc(t.sym)}</b><span class="num">${esc(px(t.price))}</span><span class="num ${t.chg>=0?"up":"dn"}">${t.chg>=0?"+":""}${(+t.chg).toFixed(1)}%</span><span class="muted num">score ${esc(t.score)}</span></span>`).join("");
   $("ticker").innerHTML = tk ? tk+tk : `<span class="tk muted">Scout is waiting for the first scan.</span>`;
@@ -268,18 +306,128 @@ function spark(curve, start){
     <circle cx="${W-3}" cy="${Y(last)}" r="3.5" fill="${col}"/>`;
 }
 
+/* ---------- agent detail sheet ---------- */
+let openAgent = null, logFilter = "all";
+const ago = iso => { const m = Math.round((Date.now()-Date.parse(iso))/60000); return m<1?"now":m<60?m+" min ago":Math.round(m/60)+" h ago"; };
+const tile = (v,l) => `<div class="tile"><b>${esc(v)}</b><span>${esc(l)}</span></div>`;
+const sect = (t,html) => `<section class="card"><div class="h3">${esc(t)}</div>${html}</section>`;
+const feed = list => list.length ? `<div class="feed">${list.map(l=>`<div><span class="muted">${esc(hm(l.t))}</span><span><span style="color:${colorOf(l.agent)};font-weight:500">${esc(l.agent.toUpperCase())}:</span> ${l.sym?`<b>$${esc(l.sym)}</b> `:""}${esc(l.msg)}</span></div>`).join("")}</div>` : `<div class="empty">Nothing yet.</div>`;
+const WN = {momentum:"Momentum",unique_buyers:"Unique buyers",buy_sell:"Buy/sell ratio",holder_growth:"Holder growth",liq_mcap:"Liquidity/mcap",smart_wallets:"Smart wallets"};
+
+function agentInfo(k, s){
+  const cfg=s.config||{}, fl=cfg.filter||{}, an=cfg.analyst||{}, ex=cfg.executor||{}, rk=cfg.risk||{}, ct=s.counters||{};
+  const closed=s.closed||[], pos=s.positions||[];
+  if (k==="scout"){
+    const src=Object.entries(s.sources||{}), cyc=(s.scout_cycles||[]).slice(-40), mx=Math.max(1,...cyc.map(c=>c[1]));
+    const avg=cyc.length? Math.round(cyc.reduce((a,c)=>a+c[1],0)/cyc.length):0;
+    return {role:"Finds Solana coins that were just created or are trending, every 60 seconds.",
+      does:["Pulls new and trending pairs from DexScreener and GeckoTerminal.","Skips coins already rejected for rug flags, and re-checks coins that were only too young or too small after 60 minutes.","Hands every new pair to the Filter with price, liquidity, volume, market cap and age."],
+      tiles:[tile(k_(ct.scanned),"unique coins scanned"),tile(avg,"new per cycle (avg)"),tile(cyc.length,"cycles in view")],
+      extra: sect("New coins per cycle", cyc.length? `<div class="bars">${cyc.map(c=>`<i style="height:${c[1]/mx*100}%" title="${esc(hm(c[0]))}: ${c[1]}"></i>`).join("")}</div><div class="note">Last ${cyc.length} cycles, oldest left.</div>`:`<div class="empty">No cycles yet.</div>`)
+        + sect("Sources last cycle", src.length? `<div class="rows">${src.map(([n,v])=>`<div class="row"><span>${esc(n)}</span><b class="num">${v}</b></div>`).join("")}</div>`:`<div class="empty">Shows after the next run.</div>`)};
+  }
+  if (k==="filter"){
+    const kr=s.kills_by_rule||{}, lab=s.rule_labels||{}, mx=Math.max(1,...Object.values(kr));
+    const th={liq_vol:`liq ≥ $${k_(fl.min_liq)}, 1h vol ≥ $${k_(fl.min_vol_1h)}`,mint_freeze:"both authorities revoked",lp:`≥ ${fl.min_lp_locked_pct}% burned/locked`,top10:`≤ ${fl.max_top10_pct}%`,dev:`dev ≤ ${fl.max_dev_pct}%, no past rugs`,bundled:`≤ ${fl.max_bundled_pct}%`,pumped:`≤ +${fl.max_pump_1h_pct}% in 1h`,age_mcap:`${fl.min_age_min}m–${fl.max_age_h}h, $${k_(fl.min_mcap)}–$${k_(fl.max_mcap)}`};
+    return {role:"Kills every coin that fails one of 8 hard rules. One failed rule is enough.",
+      does:["Checks cheap rules first (age, market cap, liquidity, volume, pump), so RugCheck is only called for coins that could pass.","Reads RugCheck for mint/freeze authority, LP lock, top 10 holders, dev holdings and bundled launches.","Rug kills are permanent. Coins that were only too young or too small are re-checked after 60 minutes."],
+      tiles:[tile(k_(ct.killed),"killed"),tile(ct.scanned? (ct.killed/ct.scanned*100).toFixed(1)+"%":"—","kill rate"),tile(ct.scored||0,"passed to Analyst")],
+      extra: sect("Rules and kills", `<div class="rows">${Object.keys(lab).map(r=>`<div class="row"><span>${esc(lab[r])}</span><b class="num" style="color:var(--kill)">${(kr[r]||0).toLocaleString()}</b><span class="sub">Pass: ${esc(th[r]||"")}</span><div class="bar" style="grid-column:1/3"><i style="width:${(kr[r]||0)/mx*100}%"></i></div></div>`).join("")}</div>`)};
+  }
+  if (k==="analyst"){
+    const sc=(s.scored||[]).slice().reverse(), w=an.weights||{};
+    const pr=ct.scored? Math.round((ct.passed||0)/ct.scored*100):0;
+    return {role:`Scores the survivors from 0 to 100. Only ${an.min_score}+ goes to the Executor.`,
+      does:["Momentum: 1h and 5m price change.","Unique buyers and buy/sell ratio from the last hour of trades.","Holder growth per hour since launch, and liquidity relative to market cap.","Smart wallets count only with a Birdeye key (not active), so its weight is spread over the others."],
+      tiles:[tile(ct.scored||0,"scored"),tile(ct.passed||0,"passed"),tile(pr+"%","pass rate"),tile(an.min_score,"minimum score")],
+      extra: sect("Weights", `<div class="rows">${Object.entries(w).map(([n,v])=>`<div class="row"><span>${esc(WN[n]||n)}${n==="smart_wallets"?' <span class="muted">(inactive)</span>':""}</span><b class="num">${Math.round(v*100)}%</b><div class="bar" style="grid-column:1/3"><i style="width:${v*100/0.3}%;background:var(--a-analyst)"></i></div></div>`).join("")}</div>`)
+        + sect("Recent scores", sc.length? `<div class="rows">${sc.map(c=>`<div class="row"><span><b>$${esc(c.sym)}</b> <span class="muted">${esc(hm(c.t))}</span></span><span class="pill ${c.passed?"ok":"no"}">${c.score}</span>
+          <span class="sub">1h ${c.chg1h>=0?"+":""}${c.chg1h}% · liq $${k_(c.liq)} · mcap $${k_(c.mcap)} · ${c.age_h}h old</span>
+          <div class="parts">${Object.entries(c.parts||{}).map(([n,v])=>`<div class="part">${esc(WN[n]||n)} ${v}<div class="bar"><i style="width:${v}%"></i></div></div>`).join("")}</div></div>`).join("")}</div>`:`<div class="empty">Score details show after the next run.</div>`)};
+  }
+  if (k==="executor"){
+    const all=[...pos.map(p=>({...p,open:true})),...closed.slice().reverse()];
+    const avg=closed.length? closed.reduce((a,t)=>a+t.cost,0)/closed.length:0;
+    return {role:"Buys the highest-scored coins in paper, sized from the current account.",
+      does:[`${ex.max_pct_per_trade}% of equity per trade, ${ex.young_pct_per_trade??5}% for coins younger than ${ex.young_age_h??24}h.`,`At most ${ex.max_open_positions} open positions, never two with the same name.`,"Fill price comes from Jupiter's live quote for the exact size (price impact + fees).",`Skips coins in cooldown after a stop (${rk.cooldown_h??6}h).`],
+      tiles:[tile(ct.traded||0,"trades"),tile(pos.length,"open now"),tile(usd(avg),"avg size"),tile(usd(s.cash||0),"cash")],
+      extra: sect("Trades", all.length? `<div class="rows">${all.slice(0,30).map(t=>`<div class="row"><span><b>$${esc(t.sym)}</b> <span class="muted">${esc(hm(t.opened))}</span></span><span class="num">${usd(t.cost)}</span><span class="sub">score ${esc(t.score)} · entry ${px(t.entry)} · ${t.open? "open":"closed "+esc(hm(t.closed))}</span></div>`).join("")}</div>`:`<div class="empty">No trades yet.</div>`)};
+  }
+  if (k==="risk"){
+    const why={}; closed.forEach(t=>{const w=(t.why||"").replace(/ → sold.*/,"").replace(/ \(.*\)/,"").replace(/−\d+%/,"drain"); why[w]=(why[w]||0)+1;});
+    const cd=Object.entries(s.cooldown||{});
+    return {role:"Watches every open position every 15 seconds and decides when to sell.",
+      does:[`Hard stop ${rk.stop_pct}% from the market price at entry.`,`At +${rk.trail_activate_pct}%: sells ${rk.partial_sell_pct??50}% and trails the rest ${rk.trail_distance_pct}% below the peak.`,`Rug guard: sells if liquidity drops ${rk.liq_drain_pct??25}%+ or top 10 holders cut ${rk.top10_drop_pts??5}+ points.`,`Time stop after ${rk.max_hold_h}h. Losing coins go into a ${rk.cooldown_h??6}h cooldown.`],
+      tiles:[tile(`${s.wins}W / ${s.losses}L`,"result"),tile(usd(s.best),"best"),tile(usd(s.worst),"worst"),tile(pos.length,"open risk")],
+      extra: sect("Open positions", pos.length? `<div class="rows">${pos.map(p=>`<div class="row"><span><b>$${esc(p.sym)}</b>${p.partial?' <span class="pill ok">½ sold</span>':""}</span><span class="num ${p.pnl_pct>=0?"up":"dn"}">${p.pnl_pct>=0?"+":""}${p.pnl_pct}%</span><span class="sub">stop ${px(p.stop)}${p.trailing?" (trailing)":""} · opened ${esc(ago(p.opened))}</span></div>`).join("")}</div>`:`<div class="empty">No open risk.</div>`)
+        + sect("Exit reasons", Object.keys(why).length? `<div class="rows">${Object.entries(why).map(([w,n])=>`<div class="row"><span>${esc(w)}</span><b class="num">${n}</b></div>`).join("")}</div>`:`<div class="empty">No exits yet.</div>`)
+        + sect("Cooldown", cd.length? `<div class="rows">${cd.map(([n,t])=>`<div class="row"><span>$${esc(n.replace("sym:","").toUpperCase())}</span><span class="muted num">until ${esc(hm(t))}</span></div>`).join("")}</div>`:`<div class="empty">No coins in cooldown.</div>`)};
+  }
+  const lg=(s.log||[]).slice().reverse();
+  return {role:"Writes a reason for every decision, so every kill, buy and sell can be traced.",
+    does:["Every agent reports to the Logger with the coin and the reason.","The dashboard keeps the last 60 events; each agent's page keeps its own last 25.","Ask Claude below to read the log and explain patterns."],
+    tiles:[tile(k_(ct.reasons),"reasons logged"),tile(lg.length,"events in view")],
+    extra: sect("Full log", `<div class="chips" id="logChips">${["all",...AG.map(a=>a.k).filter(x=>x!=="logger")].map(a=>`<button type="button" data-f="${a}" aria-pressed="${logFilter===a}">${a==="all"?"All":AG.find(x=>x.k===a).n}</button>`).join("")}</div>${feed(lg.filter(l=>logFilter==="all"||l.agent===logFilter))}`)};
+}
+function k_(v){ return k(v); }
+
+function renderSheet(key){
+  if (!S) return;
+  const a=AG.find(x=>x.k===key); if(!a) return;
+  const info=agentInfo(key,S), act=key==="logger"? "" : sect("Recent activity", feed(((S.alog||{})[key]||[]).slice().reverse()));
+  $("sheet").innerHTML = `<div class="sh-top"><div class="ic" style="background:var(${a.c})">${a.i}</div><div><h2 id="shName">${a.n}</h2><p>${esc(info.role)}</p></div><button type="button" class="sh-close" id="shClose">Close</button></div>
+    <section class="card"><div class="h3">Now</div><div style="font-size:13.5px">${esc((S.agents||{})[key]||"—")}</div><div class="tiles" style="margin-top:10px">${info.tiles.join("")}</div></section>
+    ${sect("What it does",`<ul class="does">${info.does.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>`)}
+    ${info.extra}${act}
+    <section class="card"><div class="h3">Ask Claude</div><button type="button" class="primary" id="askAgent">Explain what ${a.n} did and what to change</button><div id="agentOut" style="white-space:pre-wrap;font-size:13.5px;line-height:1.55;margin-top:10px;max-width:62ch"></div></section>`;
+  $("shClose").onclick = closeSheet;
+  $("askAgent").hidden = !samplerRef;
+  $("askAgent").onclick = () => askAgent(key);
+  const lc=$("logChips"); if (lc) lc.onclick = e => { const b=e.target.closest("button"); if(b){ logFilter=b.dataset.f; renderSheet("logger"); } };
+}
+function openSheet(key, push=true){
+  openAgent=key; renderSheet(key); $("sheetBg").hidden=false; document.body.style.overflow="hidden";
+  if (push && location.hash!=="#agent-"+key) location.hash="agent-"+key;
+  setTimeout(()=>$("shClose")?.focus(),0);
+}
+function closeSheet(){
+  openAgent=null; $("sheetBg").hidden=true; document.body.style.overflow="";
+  if (location.hash.startsWith("#agent-")) history.replaceState(null,"",location.pathname+location.search);
+}
+$("agents").addEventListener("click", e => { const b=e.target.closest("[data-agent]"); if(b) openSheet(b.dataset.agent); });
+$("sheetBg").addEventListener("click", e => { if (e.target.id==="sheetBg") closeSheet(); });
+document.addEventListener("keydown", e => { if (e.key==="Escape" && openAgent) closeSheet(); });
+function fromHash(){ const m=location.hash.match(/^#agent-(\w+)$/); if (m && AG.some(a=>a.k===m[1])) openSheet(m[1],false); else if (openAgent) closeSheet(); }
+window.addEventListener("hashchange", fromHash);
+
+let samplerRef = null;
+async function askAgent(key){
+  const out=$("agentOut"), btn=$("askAgent"); if(!samplerRef||!S) return;
+  btn.disabled=true; out.textContent="Thinking…";
+  const data={agent:key,now:(S.agents||{})[key],activity:((S.alog||{})[key]||[]).slice(-25),counters:S.counters,
+    config:S.config, kills_by_rule:key==="filter"?S.kills_by_rule:undefined, scored:key==="analyst"?S.scored:undefined,
+    trades:(key==="executor"||key==="risk")?S.closed.slice(-30):undefined, positions:key==="risk"?S.positions:undefined,
+    sources:key==="scout"?S.sources:undefined, log:key==="logger"?S.log.slice(-60):undefined};
+  try{
+    await samplerRef(`You review one agent of a 6-agent Solana memecoin PAPER-trading desk (Scout → Filter → Analyst → Executor → Risk → Logger). Write in Danish, direct, no filler, max 160 words. 1) What this agent actually did recently (with numbers). 2) One or two concrete problems you see in its data. 3) One concrete config change (key and new value) or say clearly that nothing should change yet because the sample is too small.\n\nAGENT DATA:\n${JSON.stringify(data)}`,
+      {modelTier:"default", onText:({text})=>{ out.textContent=text; }});
+  }catch(e){ out.textContent = e.code==="rate_limited"? "Too many requests. Try again in a minute." : e.code==="not_granted"? "Claude access was declined for this page." : "Claude could not answer right now."; }
+  btn.disabled=false;
+}
+
 function setNote(t){ $("ctlNote").textContent = t; }
 
 (async () => {
   const timer = setTimeout(()=>{ if(!S) setNote("No desk state yet. The next hourly run pushes it here."); }, 10000);
   const db = await claude.use("db");
   if (db){
-    db.doc("desk/state").onSnapshot(snap => { clearTimeout(timer); if (snap.exists) render(snap.data()); else setNote("No desk state yet. The next hourly run pushes it here."); },
+    db.doc("desk/state").onSnapshot(snap => { clearTimeout(timer); if (snap.exists) { const first=!S; render(snap.data()); if (first) fromHash(); } else setNote("No desk state yet. The next hourly run pushes it here."); },
       () => { clearTimeout(timer); setNote("Could not read the desk state. Reopen the page to try again."); });
     db.doc("desk/config").onSnapshot(snap => { triggerId = snap.exists ? snap.data().trigger_id : null; $("runBtn").disabled = !triggerId; }, ()=>{});
   } else { clearTimeout(timer); setNote("Sign in to claude.ai to see the live desk."); }
 
   const sample = await claude.use("sample");
+  samplerRef = sample;
   if (!sample) $("reviewBtn").hidden = true;
   $("reviewBtn").onclick = async () => {
     if (!S) return;

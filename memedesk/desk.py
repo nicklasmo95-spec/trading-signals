@@ -149,7 +149,11 @@ RECHECK_MIN = 60
 
 
 def log(st: dict, agent: str, msg: str, sym: str = "", kind: str = "info") -> None:
-    st["log"].append({"t": now_iso(), "agent": agent, "msg": msg, "sym": sym, "kind": kind})
+    entry = {"t": now_iso(), "agent": agent, "msg": msg, "sym": sym, "kind": kind}
+    st["log"].append(entry)
+    al = st.setdefault("alog", {}).setdefault(agent, [])
+    al.append(entry)
+    del al[:-25]
     st["agents"][agent] = (f"${sym} " if sym else "") + msg
     st["counters"]["reasons"] += 1
     print(f"{datetime.now().strftime('%H:%M:%S')} {agent.upper():8} {('$'+sym) if sym else ''} {msg}", flush=True)
@@ -167,17 +171,22 @@ class Market:
 
     def new_solana_tokens(self) -> list[str]:
         mints: list[str] = []
+        self.sources = {}
         for path in ("/token-profiles/latest/v1", "/token-boosts/latest/v1", "/community-takeovers/latest/v1"):
             data = http_json(self.DS + path) or []
+            n0 = len(mints)
             for t in data if isinstance(data, list) else []:
                 if t.get("chainId") == "solana" and t.get("tokenAddress"):
                     mints.append(t["tokenAddress"])
+            self.sources["DexScreener " + path.split("/")[1]] = len(mints) - n0
         # GeckoTerminal: pools trending in the last 1h/6h + newest pools (free, no key, ~30 req/min)
         gt = "https://api.geckoterminal.com/api/v2/networks/solana"
         for path in ("trending_pools?duration=1h&page=1", "trending_pools?duration=1h&page=2",
                      "trending_pools?duration=6h&page=1", "trending_pools?duration=6h&page=2",
                      "new_pools?page=1", "new_pools?page=2", "new_pools?page=3"):
             data = http_json(f"{gt}/{path}") or {}
+            key = "GeckoTerminal " + ("trending" if path.startswith("trending") else "new pools")
+            self.sources[key] = self.sources.get(key, 0) + len(data.get("data") or [])
             for pool in data.get("data") or []:
                 tid = (((pool.get("relationships") or {}).get("base_token") or {}).get("data") or {}).get("id", "")
                 if tid.startswith("solana_"):
@@ -313,6 +322,9 @@ def scout(st, mkt) -> dict[str, dict]:
     mints = [m for m in mkt.new_solana_tokens() if not skip(m) and m not in st["positions"]]
     now = time.time()
     st["cooldown"] = {k: v for k, v in st.get("cooldown", {}).items() if v > now}
+    st["sources"] = getattr(mkt, "sources", {}) or st.get("sources", {})
+    st.setdefault("scout_cycles", []).append([now_iso(), len(mints)])
+    del st["scout_cycles"][:-60]
     pairs = mkt.pairs(mints) if mints else {}
     st["counters"]["scanned"] += sum(1 for m in pairs if m not in st["seen"])
     if pairs:
@@ -419,6 +431,10 @@ def analyst(st, mkt, cands: list[dict]) -> list[dict]:
         score = round(100 * sum(w[k] * v for k, v in active.items()) / wsum)
         c.update(score=score, parts={k: round(v * 100) for k, v in active.items()})
         st["counters"]["scored"] += 1
+        st.setdefault("scored", []).append({"t": now_iso(), "sym": c["sym"], "score": score, "parts": c["parts"],
+            "chg1h": round(c["chg1h"], 1), "liq": round(c["liq"]), "mcap": round(c["mcap"]), "age_h": round(c["age_h"], 1),
+            "passed": score >= CONFIG["analyst"]["min_score"]})
+        del st["scored"][:-25]
         st["watch"] = ([{"sym": c["sym"], "price": f(p.get("priceUsd")), "chg": c["chg1h"], "score": score}] + st["watch"])[:12]
         if score >= CONFIG["analyst"]["min_score"]:
             st["counters"]["passed"] += 1
@@ -551,6 +567,10 @@ def snapshot(st: dict) -> dict:
         "agents": st["agents"], "positions": pos, "closed": closed,
         "log": st["log"][-60:], "equity_curve": st["equity_curve"][-300:], "watch": st["watch"][:10],
         "config": CONFIG,
+        "alog": st.get("alog", {}), "scored": st.get("scored", []), "sources": st.get("sources", {}),
+        "scout_cycles": st.get("scout_cycles", []),
+        "cooldown": {k: datetime.fromtimestamp(v, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                     for k, v in st.get("cooldown", {}).items() if k.startswith("sym:")},
     }
 
 
