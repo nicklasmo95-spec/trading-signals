@@ -1,0 +1,49 @@
+{
+  "mode": "paper",
+  "start_equity_usd": 150,
+  "scan_interval_s": 60,
+  "risk_interval_s": 15,
+  "paper_slippage_pct": 1.5,
+  "filter": {
+    "min_age_min": 30,
+    "max_age_h": 72,
+    "min_mcap": 300000,
+    "max_mcap": 20000000,
+    "min_liq": 40000,
+    "min_vol_1h": 50000,
+    "max_pump_1h_pct": 80,
+    "min_lp_locked_pct": 90,
+    "max_top10_pct": 25,
+    "max_dev_pct": 3,
+    "max_bundled_pct": 10
+  },
+  "analyst": {
+    "min_score": 70,
+    "weights": {
+      "momentum": 0.22,
+      "unique_buyers": 0.18,
+      "buy_sell": 0.18,
+      "holder_growth": 0.14,
+      "liq_mcap": 0.14,
+      "smart_wallets": 0.14
+    }
+  },
+  "executor": {
+    "max_pct_per_trade": 8,
+    "max_open_positions": 5,
+    "min_order_usd": 5,
+    "young_pct_per_trade": 5,
+    "young_age_h": 24
+  },
+  "risk": {
+    "stop_pct": -10,
+    "trail_activate_pct": 12,
+    "partial_sell_pct": 50,
+    "trail_distance_pct": 10,
+    "max_hold_h": 8,
+    "cooldown_h": 6,
+    "liq_drain_pct": 25,
+    "top10_drop_pts": 5,
+    "holder_check_s": 180
+  }
+}
