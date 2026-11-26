@@ -98,7 +98,10 @@ def save_state(st: dict) -> None:
         t, verdict = seen_entry(v)
         if verdict in HARD_RULES or verdict == "pass" or now - t < RECHECK_MIN * 60:
             keep[m] = [int(t), verdict]
-    st["seen"] = dict(list(keep.items())[-1200:])
+    # hard kills and passes are never pushed out by the flood of soft kills
+    sticky = {m: v for m, v in keep.items() if v[1] in HARD_RULES or v[1] == "pass"}
+    soft = [(m, v) for m, v in keep.items() if m not in sticky]
+    st["seen"] = dict(list(sticky.items())[-400:] + soft[-(1200 - min(len(sticky), 400)):])
     st["log"] = st["log"][-120:]
     st["equity_curve"] = st["equity_curve"][-600:]
     STATE_FILE.write_text(json.dumps(st, separators=(",", ":")))
@@ -308,6 +311,8 @@ def scout(st, mkt) -> dict[str, dict]:
             return True
         return (time.time() - t) / 60 < RECHECK_MIN
     mints = [m for m in mkt.new_solana_tokens() if not skip(m) and m not in st["positions"]]
+    now = time.time()
+    st["cooldown"] = {k: v for k, v in st.get("cooldown", {}).items() if v > now}
     pairs = mkt.pairs(mints) if mints else {}
     st["counters"]["scanned"] += sum(1 for m in pairs if m not in st["seen"])
     if pairs:
@@ -426,11 +431,19 @@ def analyst(st, mkt, cands: list[dict]) -> list[dict]:
 
 def executor(st, mkt, picks: list[dict]) -> None:
     ex = CONFIG["executor"]
+    cool = st.get("cooldown", {})
     for c in picks:
-        if len(st["positions"]) >= ex["max_open_positions"] or c["mint"] in st["positions"]:
+        if len(st["positions"]) >= ex["max_open_positions"]:
             break
+        if c["mint"] in st["positions"] or any(p["sym"].lower() == c["sym"].lower() for p in st["positions"].values()):
+            continue
+        if cool.get(c["mint"], 0) > time.time() or cool.get("sym:" + c["sym"].lower(), 0) > time.time():
+            log(st, "executor", f"skipped · cooldown after stop ({CONFIG['risk']['cooldown_h']}h)", c["sym"], "info")
+            continue
         eq = equity(st)
-        usd = min(eq * ex["max_pct_per_trade"] / 100, st["cash"])
+        young = c["age_h"] < ex["young_age_h"]
+        pct = ex["young_pct_per_trade"] if young else ex["max_pct_per_trade"]
+        usd = min(eq * pct / 100, st["cash"])
         if usd < ex["min_order_usd"]:
             log(st, "executor", "skipped · not enough cash", c["sym"], "info")
             break
@@ -441,13 +454,15 @@ def executor(st, mkt, picks: list[dict]) -> None:
         qty = usd / fill
         st["cash"] -= usd
         st["positions"][c["mint"]] = {
-            "sym": c["sym"], "mint": c["mint"], "entry": fill, "qty": qty, "cost": usd, "last": price,
-            "peak": price, "stop": fill * (1 + CONFIG["risk"]["stop_pct"] / 100), "trailing": False,
+            "sym": c["sym"], "mint": c["mint"], "entry": fill, "mid0": price, "qty": qty, "cost": usd, "last": price,
+            "peak": price, "stop": price * (1 + CONFIG["risk"]["stop_pct"] / 100), "trailing": False,
+            "partial": False, "realized": 0.0, "liq0": c["liq"], "liq": c["liq"],
+            "top10_0": (c.get("rug") or {}).get("top10"), "holder_checked": time.time(),
             "opened": now_iso(), "score": c["score"], "url": c["pair"].get("url", ""),
         }
         st["counters"]["traded"] += 1
-        log(st, "executor", f"bought · ${usd:.2f} · {ex['max_pct_per_trade']}% of stack · score {c['score']}", c["sym"], "buy")
-        log(st, "risk", f"stop set {CONFIG['risk']['stop_pct']}% hard", c["sym"], "risk")
+        log(st, "executor", f"bought · ${usd:.2f} · {pct}% of stack{' (young coin)' if young else ''} · score {c['score']}", c["sym"], "buy")
+        log(st, "risk", f"stop set {CONFIG['risk']['stop_pct']}% from market", c["sym"], "risk")
 
 
 def risk(st, mkt) -> None:
@@ -457,30 +472,59 @@ def risk(st, mkt) -> None:
     rk = CONFIG["risk"]
     live = mkt.pairs(list(st["positions"]))
     for mint, pos in list(st["positions"].items()):
+        pos.setdefault("mid0", pos["entry"]); pos.setdefault("partial", False); pos.setdefault("realized", 0.0)
         p = live.get(mint)
         if p:
             pos["last"] = f(p.get("priceUsd"), pos["last"])
+            pos["liq"] = f((p.get("liquidity") or {}).get("usd"), pos.get("liq", 0))
         pos["peak"] = max(pos["peak"], pos["last"])
-        gain = pos["last"] / pos["entry"] - 1
+        gain = pos["last"] / pos["mid0"] - 1          # measured on market price, not on the fill
+
+        # 3. take half off at +trail_activate_pct, trail the rest
         if not pos["trailing"] and gain >= rk["trail_activate_pct"] / 100:
             pos["trailing"] = True
-            log(st, "risk", f"trail armed at +{gain*100:.0f}%", pos["sym"], "risk")
+            if not pos["partial"] and rk["partial_sell_pct"] > 0:
+                q = pos["qty"] * rk["partial_sell_pct"] / 100
+                fill = mkt.quote_fill(mint, q * pos["last"], pos["last"], "sell")
+                pos["qty"] -= q
+                pos["realized"] += q * fill
+                st["cash"] += q * fill
+                pos["partial"] = True
+                log(st, "risk", f"+{gain*100:.0f}% · sold {rk['partial_sell_pct']}% · ${q*fill:.2f} locked, trailing rest", pos["sym"], "win")
+            else:
+                log(st, "risk", f"trail armed at +{gain*100:.0f}%", pos["sym"], "risk")
         if pos["trailing"]:
             pos["stop"] = max(pos["stop"], pos["peak"] * (1 - rk["trail_distance_pct"] / 100))
-        held_h = (time.time() - datetime.fromisoformat(pos["opened"].replace("Z", "+00:00")).timestamp()) / 3600
+
+        # 4. rug guard: liquidity drain or top holders unloading
         why = None
-        if pos["last"] <= pos["stop"]:
-            why = "trail → sold" if pos["trailing"] else "stop → sold"
-        elif held_h >= rk["max_hold_h"]:
-            why = "time stop → sold"
+        liq0 = pos.get("liq0") or 0
+        if liq0 and pos.get("liq", liq0) < liq0 * (1 - rk["liq_drain_pct"] / 100):
+            why = f"liquidity −{(1 - pos['liq'] / liq0) * 100:.0f}% → sold"
+        elif pos.get("top10_0") is not None and time.time() - pos.get("holder_checked", 0) >= rk["holder_check_s"]:
+            pos["holder_checked"] = time.time()
+            rm = rug_metrics(mkt.rug_report(mint))
+            if rm and pos["top10_0"] - rm["top10"] >= rk["top10_drop_pts"]:
+                why = f"top10 selling ({pos['top10_0']:.0f}%→{rm['top10']:.0f}%) → sold"
+
+        held_h = (time.time() - datetime.fromisoformat(pos["opened"].replace("Z", "+00:00")).timestamp()) / 3600
+        if not why:
+            if pos["last"] <= pos["stop"]:
+                why = "trail → sold" if pos["trailing"] else "stop → sold"
+            elif held_h >= rk["max_hold_h"]:
+                why = "time stop → sold"
         if why:
-            fill = mkt.quote_fill(mint, pos["qty"] * pos["last"], min(pos["last"], pos["stop"]) if not pos["trailing"] else pos["last"], "sell")
-            proceeds = pos["qty"] * fill
+            fill = mkt.quote_fill(mint, pos["qty"] * pos["last"], pos["last"], "sell")
+            proceeds = pos["qty"] * fill + pos["realized"]
             pnl = proceeds - pos["cost"]
-            st["cash"] += proceeds
+            st["cash"] += pos["qty"] * fill
             st["closed"].append({**pos, "exit": fill, "closed": now_iso(), "pnl": round(pnl, 2),
-                                 "pnl_pct": round((fill / pos["entry"] - 1) * 100, 1), "why": why})
+                                 "pnl_pct": round(pnl / pos["cost"] * 100, 1), "why": why})
             del st["positions"][mint]
+            if pnl < 0 or "liquidity" in why or "top10" in why:   # 1. cooldown after a loss or a rug-guard exit
+                until = time.time() + rk["cooldown_h"] * 3600
+                st.setdefault("cooldown", {})[mint] = until
+                st["cooldown"]["sym:" + pos["sym"].lower()] = until
             log(st, "risk", f"{why} · {'+' if pnl >= 0 else '-'}${abs(pnl):.2f}", pos["sym"], "win" if pnl >= 0 else "loss")
 
 
@@ -492,8 +536,9 @@ def clamp(x: float) -> float:
 def snapshot(st: dict) -> dict:
     eq = equity(st)
     wins = sum(1 for t in st["closed"] if t["pnl"] >= 0)
-    pos = [{k: p[k] for k in ("sym", "entry", "last", "cost", "stop", "trailing", "opened", "score")} |
-           {"pnl_pct": round((p["last"] / p["entry"] - 1) * 100, 1)} for p in st["positions"].values()]
+    pos = [{k: p.get(k) for k in ("sym", "entry", "last", "cost", "stop", "trailing", "partial", "opened", "score")} |
+           {"pnl_pct": round(((p["qty"] * p["last"] + p.get("realized", 0)) / p["cost"] - 1) * 100, 1)}
+           for p in st["positions"].values()]
     closed = [{k: t.get(k) for k in ("sym", "entry", "exit", "cost", "pnl", "pnl_pct", "why", "opened", "closed", "score")}
               for t in st["closed"][-60:]]
     pnls = [t["pnl"] for t in st["closed"]]

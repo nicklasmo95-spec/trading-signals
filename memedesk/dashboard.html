@@ -180,7 +180,7 @@ const AG = [
   {k:"filter",n:"Filter",s:"8 kill rules",c:"--a-filter",i:"F"},
   {k:"analyst",n:"Analyst",s:"score 70+ only",c:"--a-analyst",i:"A"},
   {k:"executor",n:"Executor",s:"8% max size",c:"--a-exec",i:"E"},
-  {k:"risk",n:"Risk",s:"−6% stop · trail",c:"--a-risk",i:"R"},
+  {k:"risk",n:"Risk",s:"−10% stop · ½ at +12%",c:"--a-risk",i:"R"},
   {k:"logger",n:"Logger",s:"reason for all",c:"--a-logger",i:"L"},
 ];
 const $ = id => document.getElementById(id);
@@ -218,7 +218,7 @@ function render(s){
   const chips = {
     scout:[`${k(ct.scanned)} pairs`,"--a-scout"], filter:[`${k(ct.killed)} · ${ct.scanned? Math.round(ct.killed/ct.scanned*100):0}%`,"--kill"],
     analyst:[`${ct.scored||0} scored`,"--a-analyst"], executor:[`size ≤ ${ex.max_pct_per_trade??8}%`,"--a-exec"],
-    risk:[`${rk.stop_pct??-6}% · trail +${rk.trail_activate_pct??12}%`,"--a-risk"], logger:[`${k(ct.reasons)} reasons`,"--a-logger"]
+    risk:[`${rk.stop_pct??-10}% · ½ at +${rk.trail_activate_pct??12}%`,"--a-risk"], logger:[`${k(ct.reasons)} reasons`,"--a-logger"]
   };
   $("agents").innerHTML = AG.map(a=>`<div class="agent"><div class="ic" style="background:var(${a.c})">${a.i}</div>
     <div class="an">${a.n}<span>${a.s}</span></div><div class="aact">${esc((s.agents||{})[a.k]||"—")}</div>
@@ -249,8 +249,9 @@ function render(s){
     [`≥ $${k(fl.min_liq)}`,"liquidity"],[`≥ $${k(fl.min_vol_1h)}`,"1h volume"],[`≤ ${fl.max_top10_pct}%`,"top 10 holders"],
     [`≤ ${fl.max_dev_pct}% · ≤ ${fl.max_bundled_pct}%`,"dev · bundled"],[`≥ ${fl.min_lp_locked_pct}%`,"LP burned/locked"],
     [`≤ +${fl.max_pump_1h_pct}%`,"1h pump"],[`≥ ${an.min_score}/100`,"analyst score"],
-    [`${ex.max_pct_per_trade}% · ${ex.max_open_positions} max`,"size · open"],[`${rk.stop_pct}% hard`,"stop"],
-    [`+${rk.trail_activate_pct}% → ${rk.trail_distance_pct}% trail`,"trailing stop"]];
+    [`${ex.max_pct_per_trade}% · ${ex.young_pct_per_trade??5}% if <${ex.young_age_h??24}h`,"size (young coins)"],[`${rk.stop_pct}% from market`,"stop"],
+    [`+${rk.trail_activate_pct}% → sell ${rk.partial_sell_pct??50}%, ${rk.trail_distance_pct}% trail`,"take profit"],
+    [`liq −${rk.liq_drain_pct??25}% · top10 −${rk.top10_drop_pts??5}pt`,"rug guard"],[`${rk.cooldown_h??6}h`,"cooldown after stop"]];
   $("spec").innerHTML = spec.map(([b,t])=>`<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join("");
 }
 function k(v){ v=+v||0; return v>=1e6? (v/1e6).toFixed(v%1e6?1:0)+"M" : v>=1e3? (v/1e3).toFixed(v>=1e4?0:1)+"k" : String(v); }

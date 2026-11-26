@@ -31,12 +31,19 @@
   "executor": {
     "max_pct_per_trade": 8,
     "max_open_positions": 5,
-    "min_order_usd": 5
+    "min_order_usd": 5,
+    "young_pct_per_trade": 5,
+    "young_age_h": 24
   },
   "risk": {
-    "stop_pct": -6,
+    "stop_pct": -10,
     "trail_activate_pct": 12,
-    "trail_distance_pct": 6,
-    "max_hold_h": 8
+    "partial_sell_pct": 50,
+    "trail_distance_pct": 10,
+    "max_hold_h": 8,
+    "cooldown_h": 6,
+    "liq_drain_pct": 25,
+    "top10_drop_pts": 5,
+    "holder_check_s": 180
   }
 }
