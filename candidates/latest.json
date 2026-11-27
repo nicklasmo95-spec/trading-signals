@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-26",
-  "generated_at": "2026-11-26T11:00:47+00:00",
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T11:00:49+00:00",
   "rule": "RSI-2 < 10 og kurs > SMA200 udloeser koeb; listen er de 20 laveste RSI-2 over SMA200",
   "candidates": [
     {
