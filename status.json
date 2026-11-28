@@ -1,5 +1,5 @@
 {
-  "token_ok": false,
-  "message": "Saxo-login fejler. K\u00f8r get_tokens.py p\u00e5 serveren og genstart botten.",
-  "updated_at": "2026-11-28T03:46:43+00:00"
+  "token_ok": true,
+  "message": "Saxo-login virker",
+  "updated_at": "2026-11-28T03:48:45+00:00"
 }
