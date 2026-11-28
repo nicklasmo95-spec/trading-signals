@@ -1,5 +1,5 @@
 {
-  "token_ok": true,
-  "message": "Manuel test",
-  "updated_at": "2026-11-09T12:29:09+00:00"
+  "token_ok": false,
+  "message": "Saxo-login fejler. K\u00f8r get_tokens.py p\u00e5 serveren og genstart botten.",
+  "updated_at": "2026-11-28T03:46:43+00:00"
 }
